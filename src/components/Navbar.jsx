@@ -11,6 +11,7 @@ export default function Navbar({findAvocado}) {
   
   const handleInput = (e) =>{
     setvalue(e.target.value)
+    console.log(value);
     findAvocado(value);
   }
 
@@ -64,10 +65,11 @@ export default function Navbar({findAvocado}) {
         <div className="header__search">
           <FaSearch />
           <input
-            onChange={(e) => handleInput(e)}
+            onChange={handleInput}
             className="header__search_input "
             placeholder="Search..."
             type="text"
+            value={value}
            
           />
         </div>

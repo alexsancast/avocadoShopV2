@@ -19,10 +19,9 @@ function App() {
   }, []);
 
   function findAvocado(world) {
-    const data = avocados
-    const newAvocados = data.filter((avo) => {avo.name.toLowerCase().includes(world.toLowerCase());
-    });
-    console.log(data);
+    const data = [...avocados]
+    const newAvocados = data.filter((avo) => avo.name.toLowerCase().includes(world.toLowerCase()));
+    setAvocados(newAvocados);
   }
 
   const filter = (worlds) => {
