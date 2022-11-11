@@ -3,21 +3,29 @@ import React from "react";
 import Avocado from "./Avocado";
 import "../assets/sass/home.scss";
 
-export default function Home({ avocados, value }) {
+export default function Home({ avocados, value , isLoading }) {
+
   return (
     <div className="container__avocados">
       {value ? (
         <>
-          {avocados.map((avocado) => {
-            return (
-              <div className="card__avocado" key={avocado.id}>
-                <Avocado avocado={avocado} />
-              </div>
-            );
-          })}{" "}
+
+         {isLoading ? <div>...Cargando</div> :
+         <>
+         
+         {avocados.map((avocado) => {
+           
+           return (
+             <div className="card__avocado" key={avocado.id}>
+               <Avocado avocado={avocado} />
+             </div>
+           );
+         })}</>
+         }
+        {" "}
         </>
       ) : (
-        <div>No hya datos</div>
+        <div>No hay resultado en la busqueda</div>
       )}
     </div>
   );

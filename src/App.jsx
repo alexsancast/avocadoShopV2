@@ -3,10 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import { useEffect, useState } from "react";
 
+
 function App() {
   const [avocados, setAvocados] = useState([]);
   const [results, setresults] = useState([]);
-  const [value, setvalue] = useState();
+  const [value, setvalue] = useState(true);
+  const [isLoading, setisLoading] = useState(true)
 
   useEffect(() => {
     async function getData() {
@@ -15,27 +17,26 @@ function App() {
       const data = await getApi.json();
       setAvocados(data.data);
       setresults(data.data);
+      setisLoading(false);
     }
 
     getData();
   }, []);
 
   const findAvocado = (world) => {
-    let avo = results.filter((data) =>
-      data.name.toLowerCase().includes(world.toLowerCase())
-    );
-
+    let avo = results.filter((data) => data.name.toLowerCase().includes(world.toLowerCase()) );
     if (avo.length == 0) {
       setvalue(false);
-      console.log("no hay aguacates");
     } else {
       setvalue(true);
     }
     setAvocados(avo);
   };
+
+
   return (
     <BrowserRouter>
-      <Navbar findAvocado={findAvocado} />
+      <Navbar findAvocado = {findAvocado} />
 
       <Routes>
         <Route
@@ -67,7 +68,7 @@ function App() {
         ></Route>
         <Route
           path="/home"
-          element={<Home avocados={avocados} value={value} />}
+          element={<Home avocados={avocados} value={value} isLoading= {isLoading} />}
         ></Route>
         <Route
           path="*"

@@ -4,18 +4,14 @@ import { NavLink } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
 import { GiBasket } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
+
 import "../assets/sass/navbar.scss";
 
 export default function Navbar({findAvocado}) {
-  const [value, setvalue] = useState("");
- 
-  
-  const handleInput = (e) =>{
-    setvalue(e.target.value)
-    findAvocado(value);
-  }
 
-
+  const handleInput = (e) => {
+    findAvocado(e.target.value);
+  };
 
   return (
     <header className="header">
@@ -69,8 +65,7 @@ export default function Navbar({findAvocado}) {
             className="header__search_input "
             placeholder="Search..."
             type="text"
-            value={value}
-           
+            
           />
         </div>
 
