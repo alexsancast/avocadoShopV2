@@ -1,0 +1,27 @@
+/*Colors*/
+/*Fonts / typography*/
+/*Font Size*/
+.container__avocados {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 2em;
+  margin: auto;
+}
+
+.card__avocado {
+  width: 100%;
+  min-height: 20vh;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-left: #000000;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding-left: 10px;
+}
+.card__avocado img {
+  width: 180px;
+  height: 180px;
+  margin-left: 30px;
+}/*# sourceMappingURL=home.css.map */
