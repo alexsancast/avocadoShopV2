@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [avocados, setAvocados] = useState([]);
+  const [results, setresults] = useState([]);
+  const [value, setvalue] = useState();
 
   useEffect(() => {
     async function getData() {
@@ -12,30 +14,24 @@ function App() {
       const getApi = await fetch(`${API_REST}/api/avo`);
       const data = await getApi.json();
       setAvocados(data.data);
-     
+      setresults(data.data);
     }
 
     getData();
   }, []);
 
-  function findAvocado(world) {
-    const data = [...avocados]
-    const newAvocados = data.filter((avo) => avo.name.toLowerCase().includes(world.toLowerCase()));
-    setAvocados(newAvocados);
-  }
+  const findAvocado = (world) => {
+    let avo = results.filter((data) =>
+      data.name.toLowerCase().includes(world.toLowerCase())
+    );
 
-  const filter = (worlds) => {
-    let datos = results.filter((data) => {
-      if (data.name.toLowerCase().includes(worlds.toLowerCase())) {
-        return data;
-      }
-    });
-    if (datos.length == 0) {
+    if (avo.length == 0) {
       setvalue(false);
+      console.log("no hay aguacates");
     } else {
       setvalue(true);
     }
-    setCharacters(datos);
+    setAvocados(avo);
   };
   return (
     <BrowserRouter>
@@ -69,7 +65,10 @@ function App() {
             </div>
           }
         ></Route>
-        <Route path="/home" element={<Home avocados={avocados} />}></Route>
+        <Route
+          path="/home"
+          element={<Home avocados={avocados} value={value} />}
+        ></Route>
         <Route
           path="*"
           element={

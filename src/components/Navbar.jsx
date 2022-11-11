@@ -8,10 +8,10 @@ import "../assets/sass/navbar.scss";
 
 export default function Navbar({findAvocado}) {
   const [value, setvalue] = useState("");
+ 
   
   const handleInput = (e) =>{
     setvalue(e.target.value)
-    console.log(value);
     findAvocado(value);
   }
 
