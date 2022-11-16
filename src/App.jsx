@@ -1,14 +1,14 @@
 import Navbar from "./components/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
+import Details from "./components/Details";
 import { useEffect, useState } from "react";
-
 
 function App() {
   const [avocados, setAvocados] = useState([]);
   const [results, setresults] = useState([]);
   const [value, setvalue] = useState(true);
-  const [isLoading, setisLoading] = useState(true)
+  const [isLoading, setisLoading] = useState(true);
 
   useEffect(() => {
     async function getData() {
@@ -24,7 +24,9 @@ function App() {
   }, []);
 
   const findAvocado = (world) => {
-    let avo = results.filter((data) => data.name.toLowerCase().includes(world.toLowerCase()) );
+    let avo = results.filter((data) =>
+      data.name.toLowerCase().includes(world.toLowerCase())
+    );
     if (avo.length == 0) {
       setvalue(false);
     } else {
@@ -33,10 +35,9 @@ function App() {
     setAvocados(avo);
   };
 
-
   return (
     <BrowserRouter>
-      <Navbar findAvocado = {findAvocado} />
+      <Navbar findAvocado={findAvocado} />
 
       <Routes>
         <Route
@@ -68,7 +69,9 @@ function App() {
         ></Route>
         <Route
           path="/home"
-          element={<Home avocados={avocados} value={value} isLoading= {isLoading} />}
+          element={
+            <Home avocados={avocados} value={value} isLoading={isLoading} />
+          }
         ></Route>
         <Route
           path="*"
@@ -78,6 +81,11 @@ function App() {
               <h1>Page not found</h1>
             </div>
           }
+        ></Route>
+
+        <Route
+          path="/details/:id"
+          element={<Details/>}
         ></Route>
       </Routes>
     </BrowserRouter>
