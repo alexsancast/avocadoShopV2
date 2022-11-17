@@ -9,7 +9,7 @@ export default function Home({ avocados, value, isLoading }) {
       {value ? (
         <>
           {isLoading ? (
-            <div>...Cargando</div>
+            <div>Loading...</div>
           ) : (
             <>
               {avocados.map((avocado) => {
