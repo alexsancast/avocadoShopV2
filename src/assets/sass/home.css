@@ -4,13 +4,13 @@
 .container__avocados {
   width: 50%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 4em;
   margin: auto;
 }
 
 .card__avocado {
-  width: 100%;
+  width: 120%;
   min-height: 20vh;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -28,6 +28,7 @@
   font-size: 1em;
   font-family: "Arvo", serif;
   padding-bottom: 0.1em;
+  color: black;
 }
 .card__avocado p {
   font-size: 0.9em;
@@ -39,6 +40,7 @@
   font-size: 0.9em;
   font-family: "Arvo", serif;
   padding-bottom: 0.5em;
+  color: black;
 }
 .card__avocado button {
   background-color: #65dd75;
@@ -49,7 +51,7 @@
   font-size: 15px;
   width: 30%;
   margin: auto;
-  height: 2em;
+  height: 1.7em;
   max-height: 2em;
   transition: all 300ms;
   padding-right: 1em;

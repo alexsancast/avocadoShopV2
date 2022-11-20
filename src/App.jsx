@@ -85,7 +85,7 @@ function App() {
 
         <Route
           path="/details/:id"
-          element={<Details avocados={avocados}/>}
+          element={<Details/>}
         ></Route>
       </Routes>
     </BrowserRouter>

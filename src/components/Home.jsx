@@ -25,7 +25,7 @@ export default function Home({ avocados, value, isLoading }) {
           )}{" "}
         </>
       ) : (
-        <div>No hay resultado en la busqueda</div>
+        <div>There is not results</div>
       )}
     </div>
   );
