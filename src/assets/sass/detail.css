@@ -9,10 +9,12 @@
 }
 .container_details .container_details__avocado {
   display: flex;
+  flex-flow: nowrap;
 }
 .container_details .container_details__avocado .container_details__info {
   display: flex;
   flex-direction: column;
+  flex-flow: column nowrap;
   gap: 2em;
 }
 .container_details .container_details__avocado .container_details__info .details_title {
