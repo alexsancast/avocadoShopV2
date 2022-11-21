@@ -18,7 +18,7 @@ export default function Navbar({findAvocado}) {
       <div className="header__container">
         <NavLink to="/home">
           <img
-            src="../assets/img/navbar/aguacox_preview_rev_1.png"
+            src={'/src/assets/img/navbar/aguacox_preview_rev_1.png'}
             alt="logoAvocado"
           />
         </NavLink>
