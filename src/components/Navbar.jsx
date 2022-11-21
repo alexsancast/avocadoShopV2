@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
 import { GiBasket } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
-
+import logo from  "../assets/img/navbar/aguacox_preview_rev_1.png"
 import "../assets/sass/navbar.scss";
 
 export default function Navbar({findAvocado}) {
@@ -18,7 +18,7 @@ export default function Navbar({findAvocado}) {
       <div className="header__container">
         <NavLink to="/home">
           <img
-            src={'../src/assets/img/navbar/aguacox_preview_rev_1.png'}
+            src={logo}
             alt="logoAvocado"
           />
         </NavLink>
