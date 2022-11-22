@@ -5,6 +5,7 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { GiBasket } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
 import "../assets/sass/navbar.scss";
+import logo from "../../public/logo.png"
 
 export default function Navbar({findAvocado}) {
 
@@ -17,7 +18,7 @@ export default function Navbar({findAvocado}) {
       <div className="header__container">
         <NavLink to="/home">
           <img
-            src="/logo.png"
+            src={logo}
             alt="logoAvocado2"
           />
         </NavLink>
