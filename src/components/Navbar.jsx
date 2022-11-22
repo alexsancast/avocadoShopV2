@@ -5,6 +5,7 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { GiBasket } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
 import "../assets/sass/navbar.scss";
+//Imagnes 
 import logo from "../../public/logo.png"
 
 export default function Navbar({findAvocado}) {

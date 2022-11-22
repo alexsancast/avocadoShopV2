@@ -1,5 +1,10 @@
 import React from "react";
 import "../assets/sass/footer.scss";
+//Imagenes
+import twitter from "../../public/twitter.png"
+import facebook from "../../public/facebook.png"
+import instagram from "../../public/instagram.png"
+import avo from "../../public/aguacate.png"
 
 function Footer() {
   return (
@@ -8,8 +13,8 @@ function Footer() {
         <div className="container__footer_img_title">
           <img
             className="footer_direciones_img"
-            src="/src/assets/img/footer/aguacate.png"
-            alt=""
+            src={avo}
+            alt="Avocado"
           />
           <h1>Our Shop</h1>
         </div>
@@ -22,9 +27,9 @@ function Footer() {
       <div className="container__footer_social">
         <h1>Social Media</h1>
         <div className="container__footer_social_img">
-          <img src="/src/assets/img/footer/facebook.png" alt="" />
-          <img src="/src/assets/img/footer/instagram.png" alt="" />
-          <img src="/src/assets/img/footer/twitter.png" alt="" />
+          <img src={facebook} alt="" />
+          <img src={twitter} alt="" />
+          <img src={instagram} alt="" />
         </div>
       </div>
 
