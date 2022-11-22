@@ -17,7 +17,7 @@ export default function Navbar({findAvocado}) {
       <div className="header__container">
         <NavLink to="/home">
           <img
-            src="/logo.png"
+            src={"/logo.png"}
             alt="logoAvocado"
           />
         </NavLink>
