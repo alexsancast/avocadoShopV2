@@ -38,6 +38,7 @@
 .container_details .container_details__avocado .container_details__info .container__details__btn-input input {
   width: 15%;
   height: 2em;
+  border-color: rgb(77, 77, 90);
 }
 .container_details .container_details__avocado .container_details__info .container__details__btn-input .details_info__btn {
   background-color: #65dd75;
@@ -47,6 +48,10 @@
   font-family: "Koulen", cursive;
   font-size: 0.9em;
   width: 20%;
+}
+.container_details .container_details__avocado .container_details__info .container__details__btn-input .details_info__btn:hover {
+  cursor: pointer;
+  background-color: rgb(69, 182, 98);
 }
 .container_details .container_details__avocado .container_details__info .container__details_atribbutes {
   display: flex;

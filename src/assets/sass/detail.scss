@@ -9,7 +9,6 @@
   .container_details__avocado {
     display: flex;
     flex-flow: nowrap;
-   
 
     .container_details__img {
     }
@@ -44,6 +43,7 @@
         input {
           width: 15%;
           height: 2em;
+          border-color: rgb(77, 77, 90);
         }
         .details_info__btn {
           background-color: variable.$avocado-color;
@@ -53,6 +53,11 @@
           font-family: variable.$sub-title-font;
           font-size: 0.9em;
           width: 20%;
+
+          &:hover {
+            cursor: pointer;
+            background-color: rgb(69, 182, 98);
+          }
         }
       }
 

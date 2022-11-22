@@ -20,6 +20,11 @@
   padding-left: 10px;
   padding-bottom: 0.8em;
 }
+.card__avocado:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(0.5%);
+  cursor: pointer;
+}
 .card__avocado img {
   width: 180px;
   height: 180px;

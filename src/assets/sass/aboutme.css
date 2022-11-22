@@ -1,0 +1,34 @@
+/*Colors*/
+/*Fonts / typography*/
+/*Font Size*/
+.container__aboutme {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 4em;
+  margin: auto;
+}
+.container__aboutme .contaner__aboutme_info {
+  display: grid;
+  width: 60%;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  background: red;
+  gap: 2em;
+}
+.container__aboutme .contaner__aboutme_info .aboutme__img img {
+  width: 320px;
+  height: 310px;
+  border-radius: 50%;
+  border: 3px solid rgb(21, 214, 21);
+}
+.container__aboutme .contaner__aboutme_info .aboutme__info {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1em;
+}
+.container__aboutme .contaner__aboutme_info .aboutme__info h1 {
+  font-family: "Arvo", serif;
+}
+.container__aboutme .contaner__aboutme_info .aboutme__info p {
+  font-family: "Varela", sans-serif;
+}/*# sourceMappingURL=aboutme.css.map */

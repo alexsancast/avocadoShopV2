@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Details from "./components/Details";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
+import Aboutme from "./components/Aboutme";
 
 function App() {
   const [avocados, setAvocados] = useState([]);
@@ -44,10 +45,7 @@ function App() {
         <Route
           path="/aboutme"
           element={
-            <div>
-              {" "}
-              <h1>hola</h1>
-            </div>
+          <Aboutme/>
           }
         ></Route>
         <Route
@@ -87,7 +85,7 @@ function App() {
         <Route path="/details/:id" element={<Details />}></Route>
       </Routes>
 
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 }
