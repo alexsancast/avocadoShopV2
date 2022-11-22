@@ -18,7 +18,7 @@ export default function Navbar({findAvocado}) {
         <NavLink to="/home">
           <img
             src="/logo.png"
-            alt="logoAvocado"
+            alt="logoAvocado2"
           />
         </NavLink>
 
@@ -71,7 +71,7 @@ export default function Navbar({findAvocado}) {
         <div className="header__username-amount">
           <div className="header__username">
             <BsFillPersonFill size="1.3em" />
-            <p>Hi , Alex</p>
+            <p>Hi , Jenn</p>
           </div>
 
           <div className="header__amount">
