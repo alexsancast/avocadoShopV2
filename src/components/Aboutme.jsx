@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/sass/aboutme.scss";
-import alex from "../../public/cast.jpeg";
+import alex from "../../public/cast.jpg";
 
 function Aboutme() {
   return (
@@ -18,7 +18,7 @@ function Aboutme() {
             reiciendis natus accusantium!
           </p>
           <p>
-            Portafolio : <a href="https://alexsancast.github.io/">Click here !</a>{" "}
+            My portafolio is  <a href="https://alexsancast.github.io/">here !</a>{" "}
           </p>
         </div>
       </div>

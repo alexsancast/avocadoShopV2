@@ -5,6 +5,7 @@ import Details from "./components/Details";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Aboutme from "./components/Aboutme";
+import Location from "./components/Location"
 
 function App() {
   const [avocados, setAvocados] = useState([]);
@@ -42,19 +43,11 @@ function App() {
       <Navbar findAvocado={findAvocado} />
 
       <Routes>
-        <Route
-          path="/aboutme"
-          element={
-          <Aboutme/>
-          }
-        ></Route>
+        <Route path="/aboutme" element={<Aboutme />}></Route>
         <Route
           path="/location"
           element={
-            <div>
-              {" "}
-              <h1>La Romana</h1>
-            </div>
+          <Location/>
           }
         ></Route>
         <Route
