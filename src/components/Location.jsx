@@ -2,6 +2,9 @@ import React from "react";
 import "../assets/sass/location.scss";
 //imagenes
 import gif from "../../public/location2.gif";
+import location from "../../public/location.png"
+import avostore from "../../public/avostore.jpg"
+
 
 function Location() {
   return (
@@ -37,9 +40,22 @@ function Location() {
           <div>
             <button>Get directions</button>
           </div>
+      
+          
+       
         </div>
 
-        <div className="container__location_img"></div>
+        <div className="container__location_img">
+          
+          <img src={avostore} alt="" />
+
+          <img src={location} alt="" />
+          
+
+          
+
+
+        </div>
       </div>
     </div>
   );

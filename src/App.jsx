@@ -41,7 +41,6 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar findAvocado={findAvocado} />
-
       <Routes>
         <Route path="/aboutme" element={<Aboutme />}></Route>
         <Route
@@ -77,7 +76,6 @@ function App() {
 
         <Route path="/details/:id" element={<Details />}></Route>
       </Routes>
-
       <Footer />
     </BrowserRouter>
   );
