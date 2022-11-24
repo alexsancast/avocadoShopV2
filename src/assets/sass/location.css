@@ -2,49 +2,56 @@
 /*Fonts / typography*/
 /*Font Size*/
 .container__location {
-  width: 60%;
-  display: grid;
-  grid-template-rows: repeat(auto-fit, minmax(10rem, 1fr));
-  margin: auto;
-}
-.container__location img {
-  width: 100px;
-  height: 100px;
-}
-.container__location .main {
+  width: 100%;
   display: flex;
-  flex-flow: row nowrap;
-  gap: 5em;
+  justify-content: center;
+  align-items: center;
+  gap: 7em;
+  padding: 3em;
 }
-.container__location .main .container__location_btn {
+.container__location h1, .container__location h2 {
+  font-family: "Arvo", serif;
+}
+.container__location h2 {
+  font-size: 22px;
+  text-decoration: underline;
+  color: #65dd75;
+}
+.container__location p {
+  font-family: "Varela", sans-serif;
+}
+.container__location .location_title img {
+  width: 200px;
+  height: 200px;
+}
+.container__location .container__location_info {
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+}
+.container__location .container__location_addr {
   display: flex;
   flex-flow: column wrap;
   gap: 1em;
 }
-.container__location .main .container__location_btn button {
+.container__location button {
   background-color: #65dd75;
   border: none;
   border-radius: 4px;
   color: #fff;
-  font-family: "Koulen", cursive;
+  font-family: "Arvo", serif;
   font-size: 15px;
   width: 80%;
-  margin: auto;
   height: 3em;
   max-height: 3em;
   transition: all 300ms;
 }
-.container__location .main .container__location_btn button:hover {
+.container__location button:hover {
   cursor: pointer;
   background-color: rgb(69, 182, 98);
 }
-.container__location .location__info_gif {
-  display: flex;
-  flex-flow: column;
-  gap: 2em;
-}
-.container__location .location__info_gif .location__info_hour_addr {
-  display: flex;
-  flex-flow: column;
-  gap: 1em;
+.container__location .container__location_img img {
+  border-radius: 5%;
+  width: 500px;
+  height: 400px;
 }/*# sourceMappingURL=location.css.map */

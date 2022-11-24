@@ -5,11 +5,10 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { GiBasket } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
 import "../assets/sass/navbar.scss";
-//Imagnes 
-import logo from "../../public/logo.png"
+//Imagnes
+import logo from "../../public/logo.png";
 
-export default function Navbar({findAvocado}) {
-
+export default function Navbar({ findAvocado }) {
   const handleInput = (e) => {
     findAvocado(e.target.value);
   };
@@ -18,10 +17,7 @@ export default function Navbar({findAvocado}) {
     <header className="header">
       <div className="header__container">
         <NavLink to="/home">
-          <img
-            src={logo}
-            alt="logoAvocado2"
-          />
+          <img src={logo} alt="logoAvocado2" />
         </NavLink>
 
         <nav className="nav">
@@ -51,22 +47,22 @@ export default function Navbar({findAvocado}) {
                 className={({ isActive }) =>
                   isActive ? "isActive" : "isDesactive"
                 }
-                to="/contactus"
+                to="/support"
               >
-                Contact Us
+                Support
               </NavLink>
             </li>
           </ul>
         </nav>
 
         <div className="header__search">
-          <FaSearch />
+          <FaSearch className="search_icon" />
+
           <input
             onChange={handleInput}
             className="header__search_input "
             placeholder="Search..."
             type="text"
-            
           />
         </div>
 

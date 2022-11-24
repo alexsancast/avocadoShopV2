@@ -35,7 +35,16 @@
 .header .header__container .nav .ul .li__item {
   margin: 0em 1em;
 }
-.header .header__container .header__search_input {
+.header .header__container .header__search {
+  position: relative;
+}
+.header .header__container .header__search .search_icon {
+  color: #65dd75;
+  position: absolute;
+  top: 7px;
+  left: 10px;
+}
+.header .header__container .header__search .header__search_input {
   width: 250px;
   font-size: 14px;
   height: 30px;

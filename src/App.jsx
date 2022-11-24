@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Aboutme from "./components/Aboutme";
 import Location from "./components/Location"
+import Contactus from "./components/Contactus";
 
 function App() {
   const [avocados, setAvocados] = useState([]);
@@ -50,12 +51,9 @@ function App() {
           }
         ></Route>
         <Route
-          path="/contactus"
+          path="/support"
           element={
-            <div>
-              {" "}
-              <h1>Registro</h1>
-            </div>
+          <Contactus/>
           }
         ></Route>
         <Route

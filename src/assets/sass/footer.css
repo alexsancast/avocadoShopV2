@@ -9,6 +9,10 @@
   margin-top: 30px;
   padding: 1.5em;
   flex-wrap: wrap;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 .container__footer h1 {
   font-size: 1em;

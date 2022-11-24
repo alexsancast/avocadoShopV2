@@ -41,16 +41,28 @@
       }
     }
 
-    .header__search_input {
-      width: 250px;
-      font-size: 14px;
-      height: 30px;
-      padding-left: 30px;
-      outline: none;
-      border-radius: 15px;
-      border: #000000;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      font-family: variable.$title-font;
+    .header__search {
+      position: relative;
+
+      .search_icon{
+        color:  #65dd75;
+        position: absolute;
+        top:7px;
+        left: 10px;
+       
+
+      }
+      .header__search_input {
+        width: 250px;
+        font-size: 14px;
+        height: 30px;
+        padding-left: 30px;
+        outline: none;
+        border-radius: 15px;
+        border: #000000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        font-family: variable.$title-font;
+      }
     }
 
     .header__username-amount {
