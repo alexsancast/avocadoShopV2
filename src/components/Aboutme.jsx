@@ -5,7 +5,7 @@ import alex from "../../public/cast.jpg";
 function Aboutme() {
   return (
     <div className="container__aboutme">
-      <div className="contaner__aboutme_info">
+      <div className="container__aboutme_info">
         <div className="aboutme__img">
           <img src={alex} alt="" />
         </div>

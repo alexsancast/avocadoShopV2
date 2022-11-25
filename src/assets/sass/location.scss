@@ -3,6 +3,7 @@
 .container__location {
   width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 7em;
@@ -71,4 +72,23 @@
       height: 400px;
     }
   }
+}
+
+//medias
+@media screen and (max-width:870px){
+
+  .container__location{
+    flex-direction: column;
+    gap: 1em;
+    
+    .container__location_img {
+      img {
+        border-radius: 5%;
+        width: 400px;
+        height: 300px;
+      }
+    }
+
+  }
+
 }

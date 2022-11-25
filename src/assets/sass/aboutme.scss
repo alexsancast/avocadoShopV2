@@ -7,10 +7,11 @@
   gap: 4em;
   margin: auto;
 
-  .contaner__aboutme_info {
+  .container__aboutme_info {
+    width: 80%;
     display: flex;
+    flex-direction: row;
     gap: 3em;
-    width: 60%;
     margin: auto;
 
     .aboutme__img {
@@ -35,4 +36,21 @@
       }
     }
   }
+}
+
+//Medias
+
+@media screen and (max-width: 623px){
+
+  .container__aboutme{
+    width: 60%;
+    
+    .container__aboutme_info{
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+      
+    }
+  }
+
 }
