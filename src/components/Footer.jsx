@@ -5,6 +5,8 @@ import twitter from "../../public/twitter.png"
 import facebook from "../../public/facebook.png"
 import instagram from "../../public/instagram.png"
 import avo from "../../public/aguacate.png"
+import { FcPhone } from "react-icons/fc";
+import { MdAlternateEmail } from "react-icons/md";
 
 function Footer() {
   return (
@@ -34,12 +36,12 @@ function Footer() {
       </div>
 
       <div className="container__footer_contact">
-        <h1>Contact Us</h1>
-        <p>alexsancastg@gmail.com </p>
-        <p> 809-813-0337 / 829-406-2976</p>
+        <h1>  Contact Us</h1>
+        <p> <MdAlternateEmail size="2em"/>alexsancastg@gmail.com </p>
+        <p> <FcPhone size="2em"/> 809-813-0337 / 829-406-2976</p>
       </div>
     </div>
   );
 }
 
-export default Footer;
+export default Footer
