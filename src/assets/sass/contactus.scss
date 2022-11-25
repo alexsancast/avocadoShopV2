@@ -6,6 +6,7 @@
   grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
   gap: 7em;
   margin: auto;
+  min-height: calc(100vh - 200px);
 
 
   h1 {
