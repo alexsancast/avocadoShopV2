@@ -71,6 +71,9 @@
   font-size: 13px;
   font-family: "Arvo", serif;
 }
+.header .header__container .menu_ham {
+  display: none;
+}
 
 .isActive {
   color: #65dd75;
@@ -88,4 +91,13 @@
 .isDesactive:hover {
   color: 0;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1110px) {
+  .header__container .header__username-amount {
+    display: none;
+  }
+  .menu_ham {
+    display: block;
+  }
 }/*# sourceMappingURL=navbar.css.map */

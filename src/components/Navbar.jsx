@@ -5,6 +5,7 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { GiBasket } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
 import "../assets/sass/navbar.scss";
+import { IoReorderThreeOutline } from "react-icons/io5";
 //Imagnes
 import logo from "../../public/logo.png";
 
@@ -75,7 +76,13 @@ export default function Navbar({ findAvocado }) {
           <div className="header__amount">
             <GiBasket size="1.3em" />
           </div>
+
+      
         </div>
+
+        <div>
+            <IoReorderThreeOutline className="menu_ham" size ="2em"/>
+          </div>
       </div>
     </header>
   );
