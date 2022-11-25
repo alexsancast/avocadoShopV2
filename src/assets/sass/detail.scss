@@ -1,22 +1,20 @@
 @use "barchart/variable";
 
 .container_details {
-  width: 50%;
+  width: 70%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   margin: auto;
+  justify-content: center;
 
   .container_details__avocado {
     display: flex;
-    flex-flow: nowrap;
-
-    .container_details__img {
-    }
+    flex-flow: row nowrap;
+    justify-content: center;
 
     .container_details__info {
       display: flex;
-      flex-direction: column;
-      flex-flow: column nowrap;
+      flex-flow: column wrap;
       gap: 2em;
 
       .details_title {
@@ -52,7 +50,8 @@
           color: #fff;
           font-family: variable.$sub-title-font;
           font-size: 0.9em;
-          width: 20%;
+          width: 100px;
+          height: 25px;
 
           &:hover {
             cursor: pointer;
@@ -87,6 +86,16 @@
           }
         }
       }
+    }
+  }
+}
+
+//Medias
+
+@media screen and (max-width: 840px) {
+  .container_details {
+    .container_details__avocado {
+    flex-direction: column;
     }
   }
 }
