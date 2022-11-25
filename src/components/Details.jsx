@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../assets/sass/detail.scss";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 function Details() {
   const [avocado, setAvocado] = useState([]);
@@ -41,6 +42,7 @@ function Details() {
             <div className="container__details__btn-input">
               <input  type="number" min={0} max={100} />
               <button className="details_info__btn" key={avocado.id}>
+              <AiOutlineShoppingCart size="1em" />
                 Add to Cart
               </button>
             </div>
