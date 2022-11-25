@@ -4,7 +4,7 @@
   width: 50%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-  gap: 4em;
+  gap: 7em;
   margin: auto;
 
 
@@ -72,3 +72,26 @@
 
 
   }
+
+  //Media
+  @media screen and (max-width:1336px){
+    .container__contactus{
+      width: 70%;
+    }
+  }
+
+  @media screen and (max-width:964px){
+    .container__contactus{
+      width: 90%;
+    }
+  }
+
+  @media screen and (max-width:964px){
+    .container__contactus{
+      width: 90%;
+    }
+  }
+
+
+
+ 
