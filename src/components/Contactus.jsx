@@ -14,7 +14,7 @@ function Contactus() {
         <h1>Send us a Message</h1>
         <input className="contactus_input" placeholder="Name" type="text" />
         <input className="contactus_input" placeholder="Email" type="text" />
-        <textarea class="contactus_text" rows="10" cols="40">
+        <textarea className="contactus_text">
           Escribe tu comentario....
         </textarea>
         <button type="submit">Submit</button>

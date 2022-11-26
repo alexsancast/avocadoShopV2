@@ -7,12 +7,18 @@ import Footer from "./components/Footer";
 import Aboutme from "./components/Aboutme";
 import Location from "./components/Location"
 import Contactus from "./components/Contactus";
+import Slidebar from "./components/Slidebar";
+import Backdrop from "./components/Backdrop";
 
 function App() {
   const [avocados, setAvocados] = useState([]);
   const [results, setresults] = useState([]);
   const [value, setvalue] = useState(true);
   const [isLoading, setisLoading] = useState(true);
+  
+
+
+  
 
   useEffect(() => {
     async function getData() {
@@ -26,6 +32,8 @@ function App() {
 
     getData();
   }, []);
+
+
 
   const findAvocado = (world) => {
     let avo = results.filter((data) =>
@@ -42,6 +50,8 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar findAvocado={findAvocado} />
+      <Slidebar/>
+      <Backdrop/>
       <Routes>
         <Route path="/aboutme" element={<Aboutme />}></Route>
         <Route

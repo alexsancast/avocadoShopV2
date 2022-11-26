@@ -9,7 +9,11 @@ import { IoReorderThreeOutline } from "react-icons/io5";
 //Imagnes
 import logo from "../../public/logo.png";
 
+const [slidebar , setSlidebar] = useState(false);
+
 export default function Navbar({ findAvocado }) {
+
+  const toggleSidebar = () => setSlidebar((prevState)=> !prevState);
   const handleInput = (e) => {
     findAvocado(e.target.value);
   };
@@ -81,7 +85,7 @@ export default function Navbar({ findAvocado }) {
         </div>
 
         <div>
-            <IoReorderThreeOutline className="menu_ham" size ="2em"/>
+            <IoReorderThreeOutline onClick={toggleSidebar} className="menu_ham" size ="2em"/>
           </div>
       </div>
     </header>
