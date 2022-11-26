@@ -15,9 +15,7 @@ function App() {
   const [results, setresults] = useState([]);
   const [value, setvalue] = useState(true);
   const [isLoading, setisLoading] = useState(true);
-  
-
-
+  const [slidebar , setSlidebar] = useState(false);
   
 
   useEffect(() => {
@@ -34,6 +32,7 @@ function App() {
   }, []);
 
 
+  const toggleSidebar = () => {console.log("Its work!")}
 
   const findAvocado = (world) => {
     let avo = results.filter((data) =>
@@ -49,7 +48,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar findAvocado={findAvocado} />
+      <Navbar toggleSidebar={toggleSidebar} findAvocado={findAvocado} />
       <Slidebar/>
       <Backdrop/>
       <Routes>
