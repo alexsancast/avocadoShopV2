@@ -5,7 +5,7 @@ import Details from "./components/Details";
 import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Aboutme from "./components/Aboutme";
-import Location from "./components/Location"
+import Location from "./components/Location";
 import Contactus from "./components/Contactus";
 import Slidebar from "./components/Slidebar";
 import Backdrop from "./components/Backdrop";
@@ -15,8 +15,7 @@ function App() {
   const [results, setresults] = useState([]);
   const [value, setvalue] = useState(true);
   const [isLoading, setisLoading] = useState(true);
-  const [slidebar , setSlidebar] = useState(false);
-  
+  const [slidebar, setSlidebar] = useState(false);
 
   useEffect(() => {
     async function getData() {
@@ -31,9 +30,9 @@ function App() {
     getData();
   }, []);
 
-
-  const toggleSidebar = () => {console.log("Its work!")}
-
+  const toggleSidebar = () => {
+    setSlidebar((prevent) => !prevent);
+  };
   const findAvocado = (world) => {
     let avo = results.filter((data) =>
       data.name.toLowerCase().includes(world.toLowerCase())
@@ -49,22 +48,12 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar toggleSidebar={toggleSidebar} findAvocado={findAvocado} />
-      <Slidebar/>
-      <Backdrop/>
+      <Slidebar slidebar={slidebar} />
+      <Backdrop />
       <Routes>
         <Route path="/aboutme" element={<Aboutme />}></Route>
-        <Route
-          path="/location"
-          element={
-          <Location/>
-          }
-        ></Route>
-        <Route
-          path="/support"
-          element={
-          <Contactus/>
-          }
-        ></Route>
+        <Route path="/location" element={<Location />}></Route>
+        <Route path="/support" element={<Contactus />}></Route>
         <Route
           path="/home"
           element={

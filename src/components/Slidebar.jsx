@@ -8,13 +8,16 @@ import {
 } from "react-icons/io5";
 import avo from "../../public/aguacate.png";
 
-
-function Slidebar() {
+function Slidebar({ slidebar }) {
   return (
-    <div className="container__slidebar">
+    <div
+      className={
+        slidebar ? "container__slidebar slidebar-open" : "container__slidebar"
+      }
+    >
       <li>
-        {" "}
-        <img src={avo} alt="" />
+        {/* {" "}
+        <img src={avo} alt="" /> */}
       </li>
       <li>
         {" "}

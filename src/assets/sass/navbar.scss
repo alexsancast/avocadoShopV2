@@ -23,11 +23,6 @@
       height: 50px;
     }
 
-    .header__logo img {
-      height: 120px;
-      width: 250px;
-    }
-
     .nav {
       .ul {
         display: flex;
@@ -65,33 +60,32 @@
 
     .header__username-amount {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
-    }
-    .header__username {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-right: 3em;
 
-      p {
-        padding-top: 0.3em;
-        font-size: 13px;
-        font-family: variable.$title-font;
+      .header__username {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+          padding-top: 0.3em;
+          font-size: 13px;
+          font-family: variable.$title-font;
+        }
       }
     }
 
     .menu_ham {
       display: none;
 
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
     }
   }
 }
 
-.container__slidebar{
+.container__slidebar {
   position: absolute;
   background-color: white;
   color: black;
@@ -100,8 +94,7 @@
   transition: all 0.4s;
   transform: translateX(100%);
 
-
-  img{
+  img {
     width: 25px;
     height: 25px;
   }
@@ -109,21 +102,22 @@
   li {
     color: black;
     padding: 1rem 2rem;
-    border-bottom: solid rgba($color: #cfe12a, $alpha: 1.0);
+    border-bottom: solid rgba($color: #cfe12a, $alpha: 1);
   }
-
-
 }
 
-.backdrop{
+.slidebar-open {
+  transform: translateX(0%);
+}
+
+.backdrop {
   position: fixed;
-  top:0;
+  top: 0;
   right: 0;
   height: 100vh;
   width: 100%;
   display: none;
-  background-color: rgba(0,0,0,0.5);
-
+  background-color: rgba(0, 0, 0, 0.5);
 }
 //*Styles for NavLinks*//
 
@@ -148,9 +142,11 @@
 //Media
 @media screen and (max-width: 1110px) {
   .header {
+    padding: 0 2em;
     .header__container {
-      .header__username-amount {
-        display: none;
+      img {
+        width: 190px;
+        height: 50px;
       }
 
       .nav {
@@ -167,6 +163,12 @@
 @media screen and (max-width: 765px) {
   .header {
     padding: 0 1em;
+    .header__container {
+      img {
+        width: 180px;
+        height: 50px;
+      }
+    }
   }
 }
 
@@ -174,13 +176,17 @@
   .header {
     .header__container {
       img {
-        width: 165px;
-        height: 30px;
+        width: 170px;
+        height: 40px;
       }
       .header__search {
+        .search_icon {
+          position: relative;
+          width: 25px;
+          height: 20px;
+        }
         .header__search_input {
-          width: 160px;
-          height: 25px;
+          display: none;
         }
       }
     }
