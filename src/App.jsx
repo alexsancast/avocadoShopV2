@@ -25,18 +25,32 @@ function App() {
       setAvocados(data.data);
       setresults(data.data);
       setisLoading(false);
+    
+     
+    
+    
+      
+      
     }
 
     getData();
   }, []);
 
   const addTocart = (id) =>{
-    console.log(`Este es el id : ${id}`);
+    const avocado = avocados.find((avo)=>avo.id == id);
+    if(sessionStorage.getItem("cart") == null){
+      sessionStorage.setItem("cart" , JSON.stringify(avocado)); 
+      console.log("No hay aguacates")
+    }
+    else {
+      console.log("Ya existe un aguacate");
+    }
+ 
   } 
 
   const toggleSidebar = () => {
     setSlidebar((prevent) => !prevent);
-  };
+  };  
   const findAvocado = (world) => {
     let avo = results.filter((data) =>
       data.name.toLowerCase().includes(world.toLowerCase())
