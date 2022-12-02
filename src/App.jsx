@@ -38,9 +38,10 @@ function App() {
 
   const addTocart = (id) =>{
     const avocado = avocados.find((avo)=>avo.id == id);
+    let avo = [] ;
     if(sessionStorage.getItem("cart") == null){
-      sessionStorage.setItem("cart" , JSON.stringify(avocado)); 
-      console.log("No hay aguacates")
+      avo.push({...avocado,quality:1});
+      sessionStorage.setItem("cart" , JSON.stringify(avo)); 
     }
     else {
       console.log("Ya existe un aguacate");
