@@ -68,28 +68,15 @@ export default function Navbar({ findAvocado, toggleSidebar }) {
         </div>
 
         <div className="header__username-amount">
+          <BsFillPersonFill className="header__username" size="1.3em" />
 
-          <div>
-          <BsFillPersonFill size="1.3em" />
+          <GiBasket className="header__basket" size="1.3em" />
 
-          </div>
-
-          <div>
-          <GiBasket size="1.3em" />
-
-          </div>
-        
-
-         
-           <div>
-           <IoReorderThreeOutline
+          <IoReorderThreeOutline 
             onClick={toggleSidebar}
             className="menu_ham"
             size="1.5em"
           />
-
-           </div>
-        
         </div>
       </div>
     </header>
