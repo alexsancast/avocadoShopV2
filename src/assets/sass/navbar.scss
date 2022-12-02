@@ -115,16 +115,13 @@
     padding: 1rem 2rem;
     font-size: 0.9em;
     font-family: variable.$title-font;
-    .a{
+    .a {
       color: black;
-
     }
-  
-    &:hover{
+
+    &:hover {
       border-bottom: solid rgba($color: #cfe12a, $alpha: 1);
-
     }
-   
   }
 }
 
@@ -168,8 +165,26 @@
     padding: 0 2em;
     .header__container {
       img {
-        width: 190px;
-        height: 50px;
+        width: 180px;
+        height: 40px;
+      }
+
+      .header__username-amount {
+        .header__username,
+        .header__basket {
+          width: 17px;
+          height: 17px;
+        }
+      }
+
+      .header__search{
+        .search_icon{
+          top:5px
+        }
+        .header__search_input{
+          width: 200px ;
+          height: 25px;
+        }
       }
 
       .nav {
@@ -188,25 +203,21 @@
     padding: 0 1em;
     .header__container {
       img {
-        width: 180px;
-        height: 50px;
+        width: 160px;
+        height: 30px;
       }
     }
   }
 }
 
-@media screen and (max-width: 558px) {
+@media screen and (max-width: 642px) {
   .header {
     .header__container {
-      img {
-        width: 170px;
-        height: 40px;
-      }
       .header__search {
         .search_icon {
           position: relative;
-          width: 25px;
-          height: 20px;
+          width: 17px;
+          height: 17px;
         }
         .header__search_input {
           display: none;

@@ -1,13 +1,14 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../assets/sass/detail.scss";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
-function Details() {
+function Details({ addTocart }) {
   const [avocado, setAvocado] = useState([]);
   const [isLoading, setisLoading] = useState(true);
   const params = useParams();
+  const ref = useRef(null);
 
   useEffect(() => {
     async function getData() {
@@ -21,6 +22,10 @@ function Details() {
 
     getData();
   }, []);
+
+  const onPressbtn = () => {
+    addTocart(ref.current.id);
+  };
 
   return (
     <div className="container_details">
@@ -37,12 +42,20 @@ function Details() {
 
           <div className="container_details__info">
             <h1 className="details_title">{avocado.name}</h1>
-            <p className="details_description">{avocado.attributes.description}</p>
+            <p className="details_description">
+              {avocado.attributes.description}
+            </p>
             <p className="details_price">$ {avocado.price}</p>
             <div className="container__details__btn-input">
-              <input  type="number" min={0} max={100} />
-              <button className="details_info__btn" key={avocado.id}>
-              <AiOutlineShoppingCart size="1em" />
+              <input type="number" min={0} max={100} />
+              <button
+                ref={ref}
+                className="details_info__btn"
+                onClick={onPressbtn}
+                key={avocado.id}
+                id = {avocado.id}
+              >
+                <AiOutlineShoppingCart size="1em" />
                 Add to Cart
               </button>
             </div>

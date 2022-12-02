@@ -30,6 +30,10 @@ function App() {
     getData();
   }, []);
 
+  const addTocart = (id) =>{
+    console.log(`Este es el id : ${id}`);
+  } 
+
   const toggleSidebar = () => {
     setSlidebar((prevent) => !prevent);
   };
@@ -70,7 +74,10 @@ function App() {
           }
         ></Route>
 
-        <Route path="/details/:id" element={<Details />}></Route>
+        <Route
+          path="/details/:id"
+          element={<Details addTocart={addTocart} />}
+        ></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
