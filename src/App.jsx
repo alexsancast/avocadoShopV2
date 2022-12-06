@@ -30,20 +30,22 @@ function App() {
     getData();
   }, []);
 
-  const addTocart = (id , input ) => {
+  const addTocart = (id , input = 1  ) => {
+    let inputAmount = Number(input) ;
     const avocado = avocados.find((avo) => avo.id == id);
     let avo = [];
     if (sessionStorage.getItem("cart") == null) {
-      avo.push({ ...avocado, quality: input });
+      avo.push({ ...avocado, quantity: 1 });
       sessionStorage.setItem("cart", JSON.stringify(avo));
     } else {
       const datavo = JSON.parse(sessionStorage.getItem("cart"));
       const existing = datavo.some((avo) => avo.id == id);
       if (existing) {
-        datavo.find(avo => avo.id === id).quality + input;
+        datavo.find(avo=>avo.id === id).quantity += inputAmount;
+        console.log(datavo);
         sessionStorage.setItem("cart", JSON.stringify(datavo));
       }else {
-        datavo.push({...avocado, quality: + input});
+        datavo.push({...avocado,quantity: + inputAmount});
         sessionStorage.setItem("cart" , JSON.stringify(datavo));
 
       }
