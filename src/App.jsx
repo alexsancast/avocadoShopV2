@@ -25,33 +25,34 @@ function App() {
       setAvocados(data.data);
       setresults(data.data);
       setisLoading(false);
-    
-     
-    
-    
-      
-      
     }
 
     getData();
   }, []);
 
-  const addTocart = (id) =>{
-    const avocado = avocados.find((avo)=>avo.id == id);
-    let avo = [] ;
-    if(sessionStorage.getItem("cart") == null){
-      avo.push({...avocado,quality:1});
-      sessionStorage.setItem("cart" , JSON.stringify(avo)); 
+  const addTocart = (id , input ) => {
+    const avocado = avocados.find((avo) => avo.id == id);
+    let avo = [];
+    if (sessionStorage.getItem("cart") == null) {
+      avo.push({ ...avocado, quality: input });
+      sessionStorage.setItem("cart", JSON.stringify(avo));
+    } else {
+      const datavo = JSON.parse(sessionStorage.getItem("cart"));
+      const existing = datavo.some((avo) => avo.id == id);
+      if (existing) {
+        datavo.find(avo => avo.id === id).quality + input;
+        sessionStorage.setItem("cart", JSON.stringify(datavo));
+      }else {
+        datavo.push({...avocado, quality: + input});
+        sessionStorage.setItem("cart" , JSON.stringify(datavo));
+
+      }
     }
-    else {
-      console.log("Ya existe un aguacate");
-    }
- 
-  } 
+  };
 
   const toggleSidebar = () => {
     setSlidebar((prevent) => !prevent);
-  };  
+  };
   const findAvocado = (world) => {
     let avo = results.filter((data) =>
       data.name.toLowerCase().includes(world.toLowerCase())

@@ -7,8 +7,10 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 function Details({ addTocart }) {
   const [avocado, setAvocado] = useState([]);
   const [isLoading, setisLoading] = useState(true);
+  const [input , setInput] = useState ();
   const params = useParams();
   const ref = useRef(null);
+  
 
   useEffect(() => {
     async function getData() {
@@ -24,8 +26,12 @@ function Details({ addTocart }) {
   }, []);
 
   const onPressbtn = () => {
-    addTocart(ref.current.id);
+    addTocart(ref.current.id , input);
   };
+
+  const onInput = (e) => {
+    setInput(e.target.value);
+  }
 
   return (
     <div className="container_details">
@@ -47,7 +53,7 @@ function Details({ addTocart }) {
             </p>
             <p className="details_price">$ {avocado.price}</p>
             <div className="container__details__btn-input">
-              <input type="number" min={0} max={100} />
+              <input type="number" min={0} max={100} onChange ={onInput} />
               <button
                 ref={ref}
                 className="details_info__btn"
