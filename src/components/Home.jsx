@@ -1,9 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+
 import Avocado from "./Avocado";
 import "../assets/sass/home.scss";
 
-export default function Home({ avocados, value, isLoading }) {
+export default function Home({ avocados, value, isLoading , addToCart }) {
   return (
     <div className="container__avocados">
       {value ? (
@@ -14,11 +14,10 @@ export default function Home({ avocados, value, isLoading }) {
             <>
               {avocados.map((avocado) => {
                 return (
-                  <NavLink to={`/details/`+ avocado.id} key= {avocado.id}>
-                    <div className="card__avocado" >
-                      <Avocado avocado={avocado} />
+                    <div key={avocado.id} className="card__avocado" >
+                      <Avocado addToCart = {addToCart}  avocado={avocado} />
                     </div>
-                  </NavLink>
+                  
                 );
               })}
             </>

@@ -30,12 +30,12 @@ function App() {
     getData();
   }, []);
 
-  const addTocart = (id , input = 1  ) => {
+  const addTocart = (id , input = 1 ) => {
     let inputAmount = Number(input) ;
     const avocado = avocados.find((avo) => avo.id == id);
     let avo = [];
     if (sessionStorage.getItem("cart") == null) {
-      avo.push({ ...avocado, quantity: 1 });
+      avo.push({ ...avocado, quantity: inputAmount });
       sessionStorage.setItem("cart", JSON.stringify(avo));
     } else {
       const datavo = JSON.parse(sessionStorage.getItem("cart"));
@@ -79,7 +79,7 @@ function App() {
         <Route
           path="/home"
           element={
-            <Home avocados={avocados} value={value} isLoading={isLoading} />
+            <Home addTocart={addTocart} avocados={avocados} value={value} isLoading={isLoading} />
           }
         ></Route>
         <Route
