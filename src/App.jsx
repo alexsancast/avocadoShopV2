@@ -30,8 +30,8 @@ function App() {
     getData();
   }, []);
 
-  const addTocart = (id , input = 1 ) => {
-    let inputAmount = Number(input) ;
+  const addTocart = (id, input = 1) => {
+    let inputAmount = Number(input);
     const avocado = avocados.find((avo) => avo.id == id);
     let avo = [];
     if (sessionStorage.getItem("cart") == null) {
@@ -41,13 +41,12 @@ function App() {
       const datavo = JSON.parse(sessionStorage.getItem("cart"));
       const existing = datavo.some((avo) => avo.id == id);
       if (existing) {
-        datavo.find(avo=>avo.id === id).quantity += inputAmount;
+        datavo.find((avo) => avo.id === id).quantity += inputAmount;
         console.log(datavo);
         sessionStorage.setItem("cart", JSON.stringify(datavo));
-      }else {
-        datavo.push({...avocado,quantity: + inputAmount});
-        sessionStorage.setItem("cart" , JSON.stringify(datavo));
-
+      } else {
+        datavo.push({ ...avocado, quantity: +inputAmount });
+        sessionStorage.setItem("cart", JSON.stringify(datavo));
       }
     }
   };
@@ -79,7 +78,12 @@ function App() {
         <Route
           path="/home"
           element={
-            <Home addTocart={addTocart} avocados={avocados} value={value} isLoading={isLoading} />
+            <Home
+              addTocart={addTocart}
+              avocados={avocados}
+              value={value}
+              isLoading={isLoading}
+            />
           }
         ></Route>
         <Route

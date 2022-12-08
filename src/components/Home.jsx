@@ -3,7 +3,9 @@ import React from "react";
 import Avocado from "./Avocado";
 import "../assets/sass/home.scss";
 
-export default function Home({ avocados, value, isLoading , addToCart }) {
+export default function Home({ avocados, value, isLoading  }) {
+
+  const addToCart = ()=>console.log("Prueba3");
   return (
     <div className="container__avocados">
       {value ? (
