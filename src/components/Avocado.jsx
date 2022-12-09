@@ -7,7 +7,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 export default function Avocado({ avocado, addToCart }) {
   const ref = useRef(null);
   const onPressBnt = () => {
-    addToCart();
+   addToCart(ref.current.id);
   };
   return (
     <>
@@ -19,7 +19,7 @@ export default function Avocado({ avocado, addToCart }) {
       </NavLink>
 
       <button onClick={onPressBnt} id={avocado.id} key={avocado.id} ref={ref}>
-        <AiOutlineShoppingCart size="1em" /> Add
+        <AiOutlineShoppingCart size="1em"/> Add
       </button>
     </>
   );

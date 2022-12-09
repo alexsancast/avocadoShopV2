@@ -13,6 +13,7 @@ import Backdrop from "./components/Backdrop";
 function App() {
   const [avocados, setAvocados] = useState([]);
   const [results, setresults] = useState([]);
+  const [amount , setAmount ] = useState([]);
   const [value, setvalue] = useState(true);
   const [isLoading, setisLoading] = useState(true);
   const [slidebar, setSlidebar] = useState(false);
@@ -25,10 +26,21 @@ function App() {
       setAvocados(data.data);
       setresults(data.data);
       setisLoading(false);
+      
     }
 
+
+
     getData();
+    addAmount();  
   }, []);
+
+  const addAmount = ()=>{
+    const value  = JSON.parse(sessionStorage.getItem("cart")) ;
+    setAmount( value.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual)) ; 
+
+
+  }
 
   const addTocart = (id, input = 1) => {
     let inputAmount = Number(input);
@@ -49,6 +61,8 @@ function App() {
         sessionStorage.setItem("cart", JSON.stringify(datavo));
       }
     }
+
+    addAmount();
   };
 
   const toggleSidebar = () => {
@@ -68,7 +82,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar toggleSidebar={toggleSidebar} findAvocado={findAvocado} />
+      <Navbar toggleSidebar={toggleSidebar} amount={amount} findAvocado={findAvocado} />
       <Slidebar slidebar={slidebar} />
       <Backdrop />
       <Routes>
@@ -83,6 +97,7 @@ function App() {
               avocados={avocados}
               value={value}
               isLoading={isLoading}
+              addAmount = {addAmount}
             />
           }
         ></Route>
@@ -98,7 +113,7 @@ function App() {
 
         <Route
           path="/details/:id"
-          element={<Details addTocart={addTocart} />}
+          element={<Details addTocart={addTocart}  />}
         ></Route>
       </Routes>
       <Footer />
