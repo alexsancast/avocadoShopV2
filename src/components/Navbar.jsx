@@ -14,8 +14,6 @@ export default function Navbar({ findAvocado, toggleSidebar }) {
     findAvocado(e.target.value);
   };
 
-
-
   return (
     <header className="header">
       <div className="header__container">
@@ -73,45 +71,23 @@ export default function Navbar({ findAvocado, toggleSidebar }) {
           <BsFillPersonFill className="header__username" size="1.3em" />
 
           <div>
-            <Amount/>
-            
-          <GiBasket className="header__basket" size="1.3em" />
+            <Amount />
 
-
+            <GiBasket className="header__basket" size="1.3em" />
           </div>
 
-          
-
-          
-
-          <IoReorderThreeOutline 
-          
+          <IoReorderThreeOutline
             onClick={toggleSidebar}
             className="menu_ham"
             size="1.5em"
           />
-
-            
-          
-
-      
         </div>
       </div>
     </header>
   );
 }
 
-const Amount = ()=> {
-
-  const value  = sessionStorage.getItem("cart");
-  const value2 =value.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ; 
-
-  return (
-    <div className="header__amount">
-      {value2}
-
-
-    </div>
-  )
-
-}
+const Amount = () => {
+  const [amount, setAmount] = useState(0);
+  return <div className="header__amount">{amount}</div>;
+};

@@ -7,6 +7,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 function Details({ addTocart }) {
   const [avocado, setAvocado] = useState([]);
   const [isLoading, setisLoading] = useState(true);
+  const [amount, setAmount] = useState(0);
   const [input, setInput] = useState();
   const params = useParams();
   const ref = useRef(null);
@@ -26,6 +27,13 @@ function Details({ addTocart }) {
 
   const onPressbtn = () => {
     addTocart(ref.current.id, input);
+    const value = JSON.parse(sessionStorage.getItem("cart"));
+    setAmount(
+      value.map((quali) => quali.quantity).reduce((coun, qual) => coun + qual)
+    );
+   
+
+  
   };
 
   const onInput = (e) => {
