@@ -13,10 +13,12 @@ import Backdrop from "./components/Backdrop";
 function App() {
   const [avocados, setAvocados] = useState([]);
   const [results, setresults] = useState([]);
-  const [amount , setAmount ] = useState([]);
+  const [amount, setAmount] = useState([]);
   const [value, setvalue] = useState(true);
   const [isLoading, setisLoading] = useState(true);
   const [slidebar, setSlidebar] = useState(false);
+  const [cart, setCart] = useState(false);
+  const [preview, setPreview] = useState([]);
 
   useEffect(() => {
     async function getData() {
@@ -26,21 +28,25 @@ function App() {
       setAvocados(data.data);
       setresults(data.data);
       setisLoading(false);
-      
     }
 
-
-
     getData();
-    addAmount();  
+    addAmount();
   }, []);
 
-  const addAmount = ()=>{
-    const value  = JSON.parse(sessionStorage.getItem("cart")) ;
-    setAmount( value.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual)) ; 
-
-
-  }
+  const addAmount = () => {
+    if (sessionStorage.getItem("cart") === null) {
+      setAmount(0);
+    } else {
+      let value = JSON.parse(sessionStorage.getItem("cart"));
+      setPreview(value);
+      setAmount(
+        value
+          .map((quali) => quali.quantity)
+          .reduce((coun, qual) => coun + qual)
+      );
+    }
+  };
 
   const addTocart = (id, input = 1) => {
     let inputAmount = Number(input);
@@ -68,6 +74,10 @@ function App() {
   const toggleSidebar = () => {
     setSlidebar((prevent) => !prevent);
   };
+
+  const toggleCart = () => {
+    setCart((prevent) => !prevent);
+  };
   const findAvocado = (world) => {
     let avo = results.filter((data) =>
       data.name.toLowerCase().includes(world.toLowerCase())
@@ -82,7 +92,14 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar toggleSidebar={toggleSidebar} amount={amount} findAvocado={findAvocado} />
+      <Navbar
+        toggleSidebar={toggleSidebar}
+        amount={amount}
+        findAvocado={findAvocado}
+        toggleCart={toggleCart}
+        preview={preview}
+        cart={cart}
+      />
       <Slidebar slidebar={slidebar} />
       <Backdrop />
       <Routes>
@@ -97,7 +114,7 @@ function App() {
               avocados={avocados}
               value={value}
               isLoading={isLoading}
-              addAmount = {addAmount}
+              addAmount={addAmount}
             />
           }
         ></Route>
@@ -113,7 +130,7 @@ function App() {
 
         <Route
           path="/details/:id"
-          element={<Details addTocart={addTocart}  />}
+          element={<Details addTocart={addTocart} />}
         ></Route>
       </Routes>
       <Footer />

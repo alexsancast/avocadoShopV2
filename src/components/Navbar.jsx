@@ -9,12 +9,17 @@ import { IoReorderThreeOutline } from "react-icons/io5";
 //Imagnes
 import logo from "../../public/logo.png";
 
-export default function Navbar({ findAvocado, toggleSidebar ,amount}) {
+export default function Navbar({
+  findAvocado,
+  toggleSidebar,
+  amount,
+  cart,
+  toggleCart,
+  preview,
+}) {
   const handleInput = (e) => {
     findAvocado(e.target.value);
   };
-
-
 
   return (
     <header className="header">
@@ -73,35 +78,24 @@ export default function Navbar({ findAvocado, toggleSidebar ,amount}) {
           <BsFillPersonFill className="header__username" size="1.3em" />
 
           <div>
-           <div className="header__amount">
+            <div className="header__amount">{amount}</div>
 
-            {amount}
-
-           </div>
-            
-          <GiBasket className="header__basket" size="1.3em" />
-
-
+            <GiBasket className="header__basket" size="1.3em" />
           </div>
 
-          
-
-          
-
-          <IoReorderThreeOutline 
-          
+          <IoReorderThreeOutline
             onClick={toggleSidebar}
             className="menu_ham"
             size="1.5em"
           />
-
-            
-          
-
-      
         </div>
+      </div>
+
+      <div className="header__preview">
+        {preview.map((avo) => {
+          return (<h1>{avo.name}</h1>) 
+        })}
       </div>
     </header>
   );
 }
-

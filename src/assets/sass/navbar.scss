@@ -104,6 +104,16 @@
   }
 }
 
+.header__preview{
+  background-color: blue;
+  width: 300px;
+  height: 600px;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: 0;
+}
+
 .container__slidebar {
   text-align: right;
   z-index: 5;
@@ -170,6 +180,8 @@
     cursor: pointer;
   }
 }
+
+
 
 //Media
 @media screen and (max-width: 1110px) {
