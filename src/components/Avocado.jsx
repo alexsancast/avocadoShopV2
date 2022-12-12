@@ -12,7 +12,7 @@ export default function Avocado({ avocado, addToCart }) {
   return (
     <>
       <NavLink to={`/details/` + avocado.id}>
-        <img src={`https://platzi-avo.vercel.app/${avocado.image}`} alt="" />
+        <img src={`https://platzi-avo.vercel.app/${avocado.image}`} alt="image avo" />
         <h1>{avocado.name}</h1>
         <p>{avocado.attributes.description}</p>
         <h2> $ {avocado.price}</h2>

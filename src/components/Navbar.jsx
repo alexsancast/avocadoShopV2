@@ -1,6 +1,5 @@
 import React from "react";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
 import { GiBasket } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
@@ -18,8 +17,12 @@ export default function Navbar({
   preview,
   subtotal,
   slideBasket,
-  slidePreview
+  slidePreview,
 }) {
+  const navegate = useNavigate();
+  const onHanbleBtn = () => {
+    navegate("/checkout");
+  };
   const handleInput = (e) => {
     findAvocado(e.target.value);
   };
@@ -83,7 +86,11 @@ export default function Navbar({
           <div>
             <div className="header__amount">{amount}</div>
 
-            <GiBasket onClick={slidePreview} className="header__basket" size="1.3em" />
+            <GiBasket
+              onClick={slidePreview}
+              className="header__basket"
+              size="1.3em"
+            />
           </div>
 
           <IoReorderThreeOutline
@@ -122,8 +129,9 @@ export default function Navbar({
         })}
 
         <div className="preview__review-cart">
-          <label htmlFor=""> Subtotal: {subtotal}</label>
-          <button>Review Cart</button>
+          <label htmlFor=""> Subtotal: ${Math.round(subtotal)}</label>
+
+          <button onClick={onHanbleBtn}>Review Cart</button>
         </div>
       </div>
     </header>

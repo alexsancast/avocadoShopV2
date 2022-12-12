@@ -1,0 +1,36 @@
+@use "barchart/variable";
+.container__checkout {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 3em;
+  margin: auto;
+  justify-content: center;
+
+  .checkout__avo {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    height: 4em;
+    width: 20em;
+    justify-content: space-around;
+    position: relative;
+
+    img {
+      width: 3.5em;
+      height: 3.5em;
+    }
+
+    h3 {
+      font-size: 0.8em;
+      font-family: variable.$title-font;
+    }
+
+    p{
+        font-size: 0.7em;
+        font-family: variable.$title-font;
+
+    }
+  }
+}
