@@ -16,6 +16,9 @@ export default function Navbar({
   cart,
   toggleCart,
   preview,
+  subtotal,
+  slideBasket,
+  slidePreview
 }) {
   const handleInput = (e) => {
     findAvocado(e.target.value);
@@ -80,7 +83,7 @@ export default function Navbar({
           <div>
             <div className="header__amount">{amount}</div>
 
-            <GiBasket className="header__basket" size="1.3em" />
+            <GiBasket onClick={slidePreview} className="header__basket" size="1.3em" />
           </div>
 
           <IoReorderThreeOutline
@@ -91,10 +94,37 @@ export default function Navbar({
         </div>
       </div>
 
-      <div className="header__preview">
+      <div
+        className={
+          slideBasket ? "header__preview  basket-open" : "header__preview"
+        }
+      >
         {preview.map((avo) => {
-          return (<h1>{avo.name}</h1>) 
+          return (
+            <div className="preview__conatiner">
+              <div className="preview__avo">
+                <img
+                  src={`https://platzi-avo.vercel.app/${avo.image}`}
+                  alt=""
+                />
+                <h3>{avo.name}</h3>
+
+                <div className="preview__quantity">
+                  <label>x{avo.quantity}</label>
+                </div>
+
+                <div className="preview__price">
+                  <p>${avo.price}</p>
+                </div>
+              </div>
+            </div>
+          );
         })}
+
+        <div className="preview__review-cart">
+          <label htmlFor=""> Subtotal: {subtotal}</label>
+          <button>Review Cart</button>
+        </div>
       </div>
     </header>
   );

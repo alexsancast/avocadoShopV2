@@ -19,6 +19,8 @@ function App() {
   const [slidebar, setSlidebar] = useState(false);
   const [cart, setCart] = useState(false);
   const [preview, setPreview] = useState([]);
+  const [subtotal, setSubtotal] = useState(0);
+  const [slideBasket , setSlideBasket] = useState(false);
 
   useEffect(() => {
     async function getData() {
@@ -32,8 +34,17 @@ function App() {
 
     getData();
     addAmount();
+ 
   }, []);
-
+  const getSubTotal = () => {
+    let total = JSON.parse(sessionStorage.getItem("cart"));
+    setSubtotal(
+      total
+        .map((value) => value.price * value.quantity)
+        .reduce((cont, val) => cont + val)
+    );
+    console.log(subtotal);
+  };
   const addAmount = () => {
     if (sessionStorage.getItem("cart") === null) {
       setAmount(0);
@@ -41,9 +52,7 @@ function App() {
       let value = JSON.parse(sessionStorage.getItem("cart"));
       setPreview(value);
       setAmount(
-        value
-          .map((quali) => quali.quantity)
-          .reduce((coun, qual) => coun + qual)
+        value.map((quali) => quali.quantity).reduce((coun, qual) => coun + qual)
       );
     }
   };
@@ -69,10 +78,14 @@ function App() {
     }
 
     addAmount();
+    getSubTotal();
   };
 
   const toggleSidebar = () => {
     setSlidebar((prevent) => !prevent);
+  };
+  const slidePreview = () => {
+    setSlideBasket((prevent) => !prevent);
   };
 
   const toggleCart = () => {
@@ -99,6 +112,9 @@ function App() {
         toggleCart={toggleCart}
         preview={preview}
         cart={cart}
+        subtotal={subtotal}
+        slidePreview = {slidePreview}
+        slideBasket = {slideBasket}
       />
       <Slidebar slidebar={slidebar} />
       <Backdrop />
@@ -115,6 +131,7 @@ function App() {
               value={value}
               isLoading={isLoading}
               addAmount={addAmount}
+              getSubTotal={getSubTotal}
             />
           }
         ></Route>
