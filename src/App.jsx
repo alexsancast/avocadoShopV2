@@ -10,6 +10,8 @@ import Contactus from "./components/Contactus";
 import Slidebar from "./components/Slidebar";
 import Backdrop from "./components/Backdrop";
 import Checkout from "./components/Checkout";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [avocados, setAvocados] = useState([]);
@@ -22,6 +24,7 @@ function App() {
   const [preview, setPreview] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
   const [slideBasket , setSlideBasket] = useState(false);
+
 
   useEffect(() => {
     async function getData() {
@@ -37,6 +40,10 @@ function App() {
     addAmount();
  
   }, []);
+
+ 
+  const notify = () => toast("Avocado Added !");
+  
   const getSubTotal = () => {
     let total = JSON.parse(sessionStorage.getItem("cart"));
     setSubtotal(
@@ -80,6 +87,7 @@ function App() {
 
     addAmount();
     getSubTotal();
+    notify();
   };
 
   const toggleSidebar = () => {
@@ -118,6 +126,16 @@ function App() {
         slideBasket = {slideBasket}
       />
       <Slidebar slidebar={slidebar} />
+      <ToastContainer position="bottom-left"
+                      autoClose={2000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="light"/>
       <Backdrop />
       <Routes>
         <Route path="/aboutme" element={<Aboutme />}></Route>
@@ -134,6 +152,7 @@ function App() {
               isLoading={isLoading}
               addAmount={addAmount}
               getSubTotal={getSubTotal}
+              notify = {notify}
             />
           }
         ></Route>
@@ -149,7 +168,7 @@ function App() {
 
         <Route
           path="/details/:id"
-          element={<Details addTocart={addTocart} />}
+          element={<Details addTocart={addTocart} notify={notify} />}
         ></Route>
       </Routes>
       <Footer />

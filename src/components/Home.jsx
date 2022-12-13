@@ -2,7 +2,7 @@ import React from "react";
 import Avocado from "./Avocado";
 import "../assets/sass/home.scss";
 
-export default function Home({ avocados, value, isLoading , addAmount , getSubTotal  }) {
+export default function Home({ avocados, value, isLoading , addAmount , getSubTotal , notify  }) {
 
   const addToCart = (id)=>{
     const avocado = avocados.find((avo) => avo.id == id);
@@ -25,6 +25,7 @@ export default function Home({ avocados, value, isLoading , addAmount , getSubTo
 
     addAmount();
     getSubTotal();
+    notify();
 
   };
   return (
