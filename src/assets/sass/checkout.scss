@@ -7,30 +7,90 @@
   margin: auto;
   justify-content: center;
 
-  .checkout__avo {
+  .checkout__avocados {
     display: flex;
-    align-items: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    height: 4em;
-    width: 20em;
-    justify-content: space-around;
-    position: relative;
+    flex-direction: column;
+    gap: 1em;
 
-    img {
-      width: 3.5em;
-      height: 3.5em;
-    }
+    .checkout__avo {
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      height: 4em;
+      width: 22em;
+      justify-content: space-around;
+      position: relative;
+      gap: 1em;
 
-    h3 {
-      font-size: 0.8em;
-      font-family: variable.$title-font;
-    }
+      img {
+        width: 3.5em;
+        height: 3.5em;
+      }
 
-    p{
+      h3 {
         font-size: 0.7em;
         font-family: variable.$title-font;
+      }
 
+      p {
+        font-size: 0.7em;
+        font-family: variable.$title-font;
+      }
+
+      .checkout__trash {
+        background-color: green($color: #000000);
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .checkout__subtotal {
+    padding-top: 0.7em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7em;
+    width: 19em;
+    height: 19em;
+    border-radius: 10px;
+    background-color: rgb(251, 246, 246);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+    .checkout__label {
+      display: flex;
+      align-items: center;
+      gap: 9em;
+      h1 {
+        font-family: variable.$title-font;
+        font-size: 1em;
+      }
+
+      p {
+        font-family: variable.$description-font;
+      }
+    }
+
+    button {
+      background-color: #65dd75;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-family: "Koulen", cursive;
+      font-size: 1.5em;
+      width: 60%;
+      margin: auto;
+      height: 2.5em;
+      max-height: 3em;
+      transition: all 300ms;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(69, 182, 98);
+      }
     }
   }
 }

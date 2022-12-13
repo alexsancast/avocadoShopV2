@@ -87,13 +87,15 @@
     .header__amount {
       position: absolute;
       background-color: variable.$avocado-color;
-      width: 1em;
-      height: 1em;
+      width: 1.2em;
+      height: 1.2em;
       border-radius: 50%;
       right: 115px;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-family: variable.$title-font;
+      font-size: 1em;
     }
 
     .menu_ham {

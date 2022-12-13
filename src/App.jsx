@@ -123,7 +123,7 @@ function App() {
         <Route path="/aboutme" element={<Aboutme />}></Route>
         <Route path="/location" element={<Location />}></Route>
         <Route path="/support" element={<Contactus />}></Route>
-        <Route path= "/checkout" element= {<Checkout/>} ></Route>
+        <Route path= "/checkout" element= {<Checkout subtotal ={subtotal}/>} ></Route>
         <Route
           path="/home"
           element={
