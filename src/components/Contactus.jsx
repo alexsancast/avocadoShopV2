@@ -1,9 +1,13 @@
 import React from "react";
+import { useEffect } from "react";
 import "../assets/sass/contactus.scss";
 //imagenes
-import submit from "../../public/submit3.jpg"
+import submit from "../../public/submit3.jpg";
 
-function Contactus() {
+function Contactus({ slidePreview, slideBasket }) {
+  useEffect(() => {
+    slideBasket ? slidePreview() : (slideBasket = false);
+  }, []);
   return (
     <div className="container__contactus">
       <div className="contactus_img">
@@ -14,9 +18,7 @@ function Contactus() {
         <h1>Send us a Message</h1>
         <input className="contactus_input" placeholder="Name" type="text" />
         <input className="contactus_input" placeholder="Email" type="text" />
-        <textarea className="contactus_text">
-          Escribe tu comentario....
-        </textarea>
+        <textarea className="contactus_text"></textarea>
         <button type="submit">Submit</button>
       </form>
     </div>

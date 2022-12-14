@@ -1,11 +1,15 @@
 import React from "react";
+import { useEffect } from "react";
 import "../assets/sass/location.scss";
 //imagenes
 import gif from "../../public/location2.gif";
 import location from "../../public/location.png";
 import avostore from "../../public/avostore.jpg";
 
-function Location() {
+function Location({slidePreview , slideBasket}) {
+  useEffect(() => {
+    slideBasket ? slidePreview() : (slideBasket = false);
+  }, []);
   return (
     <div className="container__location ">
       <div className="container__location_info ">

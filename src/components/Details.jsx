@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import "../assets/sass/detail.scss";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
-function Details({ addTocart  }) {
+function Details({ addTocart, slidePreview, slideBasket }) {
   const [avocado, setAvocado] = useState([]);
   const [isLoading, setisLoading] = useState(true);
   const [input, setInput] = useState();
@@ -19,6 +19,8 @@ function Details({ addTocart  }) {
       const data = await getApi.json();
       setAvocado(data);
       setisLoading(false);
+
+      slideBasket ? slidePreview() : (slideBasket = false);
     }
 
     getData();

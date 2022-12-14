@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 import "../assets/sass/navbar.scss";
 
-function Backdrop() {
+function Backdrop({slidebar}) {
   return (
-    <div className='backdrop'></div>
-  )
+    <div className={slidebar ? "backdrop backdrop-open" : "backdrop"}></div>
+  );
 }
 
-export default Backdrop
+export default Backdrop;

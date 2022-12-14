@@ -1,8 +1,12 @@
 import React from "react";
+import { useEffect } from "react";
 import "../assets/sass/aboutme.scss";
 import alex from "../../public/cast.jpg";
 
-function Aboutme() {
+function Aboutme({ slidePreview , slideBasket }) {
+  useEffect(() => {
+    slideBasket ? slidePreview() : slideBasket = false; 
+  }, []);
   return (
     <div className="container__aboutme">
       <div className="container__aboutme_info">
@@ -18,7 +22,7 @@ function Aboutme() {
             reiciendis natus accusantium!
           </p>
           <p>
-            My portafolio is  <a href="https://alexsancast.github.io/">here !</a>{" "}
+            My portafolio is <a href="https://alexsancast.github.io/">here !</a>{" "}
           </p>
         </div>
       </div>

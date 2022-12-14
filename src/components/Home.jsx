@@ -1,8 +1,12 @@
 import React from "react";
+import { useEffect } from "react";
 import Avocado from "./Avocado";
 import "../assets/sass/home.scss";
 
-export default function Home({ avocados, value, isLoading , addAmount , getSubTotal , notify  }) {
+export default function Home({ avocados, value, isLoading , addAmount , getSubTotal , notify , slidePreview , slideBasket }) {
+  useEffect(()=>{
+    slideBasket ? slidePreview() : slideBasket = false; 
+  }, [])
 
   const addToCart = (id)=>{
     const avocado = avocados.find((avo) => avo.id == id);

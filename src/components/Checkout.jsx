@@ -1,8 +1,12 @@
 import "../assets/sass/checkout.scss";
+import { useEffect } from "react";
 import React from "react";
 import { TiDelete } from "react-icons/ti";
 
-function Checkout({subtotal}) {
+function Checkout({subtotal , slidePreview , slideBasket}) {
+  useEffect(() => {
+    slideBasket ? slidePreview() : (slideBasket = false);
+  }, []);
   const data = JSON.parse(sessionStorage.getItem("cart"));
   return (
     <div className="container__checkout">
@@ -28,7 +32,7 @@ function Checkout({subtotal}) {
 
         <div className="checkout__seller">
           <p>Special instructions for seller</p>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <textarea name="" id="" cols="25" rows="8"></textarea>
         </div>
 
         <button>Checkout</button>

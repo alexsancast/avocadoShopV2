@@ -1,11 +1,10 @@
 @use "barchart/variable";
 .container__checkout {
-  width: 50%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  gap: 3em;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
   margin: auto;
-  justify-content: center;
+  gap: 3em;
 
   .checkout__avocados {
     display: flex;
@@ -74,14 +73,12 @@
       }
     }
 
-    .checkout__seller{
+    .checkout__seller {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 0.8em;
-      
-
     }
 
     button {
@@ -103,6 +100,38 @@
       }
     }
   }
+}
 
+@media screen and (max-width: 1086px) {
+  .container__checkout {
+    gap: 1em;
 
+    .checkout__subtotal {
+      padding-top: 0.7em;
+      gap: 0.7em;
+      width: 17em;
+      height: 19em;
+
+      .checkout__label {
+        gap: 7em;
+        h1 {
+          font-family: variable.$title-font;
+          font-size: 0.9em;
+        }
+      }
+
+      button {
+        font-size: 1.2em;
+        width: 50%;
+        height: 2em;
+        max-height: 3em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .container__checkout {
+    flex-direction: column;
+  }
 }
