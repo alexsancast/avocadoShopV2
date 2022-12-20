@@ -102,7 +102,7 @@
   }
 }
 
-@media screen and (max-width: 1086px) {
+@media screen and (max-width: 1230px) {
   .container__checkout {
     gap: 1em;
 
@@ -130,8 +130,39 @@
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1115px) {
   .container__checkout {
     flex-direction: column;
   }
 }
+
+
+
+
+@media screen and (max-width: 1090px) {
+  .container__checkout {
+    .checkout__subtotal {
+      padding-top: 0.7em;
+      gap: 0.6em;
+      width: 17em;
+      height: 19em;
+
+      .checkout__label {
+        gap: 5em;
+        h1 {
+          font-family: variable.$title-font;
+          font-size: 0.9em;
+        }
+      }
+
+      button {
+        font-size: 1.2em;
+        width: 50%;
+        height: 2em;
+        max-height: 3em;
+      }
+    }
+  }
+}
+
+

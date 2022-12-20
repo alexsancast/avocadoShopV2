@@ -12,8 +12,6 @@ export default function Navbar({
   findAvocado,
   toggleSidebar,
   amount,
-  cart,
-  toggleCart,
   preview,
   subtotal,
   slideBasket,
@@ -108,8 +106,8 @@ export default function Navbar({
       >
         {preview.map((avo) => {
           return (
-            <div className="preview__conatiner">
-              <div className="preview__avo">
+            <div className="preview__conatiner" key={avo.id} >
+              <div className="preview__avo" >
                 <img
                   src={`https://platzi-avo.vercel.app/${avo.image}`}
                   alt=""
