@@ -3,13 +3,22 @@ import { useEffect } from "react";
 import React from "react";
 import { TiDelete } from "react-icons/ti";
 import { useRef } from "react";
+import { useState } from "react";
 
-function Checkout({ subtotal, slidePreview, slideBasket, addAmount, getSubTotal}) {
+function Checkout({
+  subtotal,
+  slidePreview,
+  slideBasket,
+  addAmount,
+  getSubTotal,
+}) {
   const ref = useRef(null);
+  const [value, setValue] = useState();
   const data = JSON.parse(sessionStorage.getItem("cart"));
 
   useEffect(() => {
     slideBasket ? slidePreview() : (slideBasket = false);
+    data.length ? setValue(true) : setValue(false);
   }, []);
 
   const onHandleDelete = (event) => {
@@ -19,11 +28,12 @@ function Checkout({ subtotal, slidePreview, slideBasket, addAmount, getSubTotal}
     sessionStorage.setItem("cart", JSON.stringify(data));
     addAmount();
     getSubTotal();
-    
+
     // window.location.href = '/public/checkout.html';
   };
   return (
     <div className="container__checkout">
+      {value ? console.log("es verdadero") : console.log("Es falso")}
       <div className="checkout__avocados">
         {data.map((avo) => {
           return (
