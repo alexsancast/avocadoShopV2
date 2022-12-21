@@ -42,6 +42,8 @@ function App() {
   const notify = () => toast("Avocado Added !");
 
   const getSubTotal = () => {
+
+    
     let total = JSON.parse(sessionStorage.getItem("cart"));
     setSubtotal(
       total
@@ -51,7 +53,10 @@ function App() {
     console.log(subtotal);
   };
   const addAmount = () => {
-    if (sessionStorage.getItem("cart") === null) {
+    if (
+      sessionStorage.getItem("cart") === null ||
+      JSON.parse(sessionStorage.getItem("cart")).length === 0
+    ) {
       setAmount(0);
     } else {
       let value = JSON.parse(sessionStorage.getItem("cart"));
@@ -163,6 +168,8 @@ function App() {
               slideBasket={slideBasket}
               subtotal={subtotal}
               slidePreview={slidePreview}
+              addAmount={addAmount}
+              getSubTotal={getSubTotal}
             />
           }
         ></Route>

@@ -4,36 +4,40 @@ import React from "react";
 import { TiDelete } from "react-icons/ti";
 import { useRef } from "react";
 
-function Checkout({subtotal , slidePreview , slideBasket}) {
-  const ref = useRef();
+function Checkout({ subtotal, slidePreview, slideBasket, addAmount, getSubTotal}) {
+  const ref = useRef(null);
   const data = JSON.parse(sessionStorage.getItem("cart"));
 
- 
   useEffect(() => {
-    
     slideBasket ? slidePreview() : (slideBasket = false);
   }, []);
-  
-  const onHandleDelete = () => {
-    // const id = e.target.dataset.id;
-    // const objItem = item.findIndex(obj=> obj.id === id);
-    // item.splice(objItem,1);
-    // localStorage.setItem('cart', JSON.stringify(item));
+
+  const onHandleDelete = (event) => {
+    const id = event.currentTarget.id;
+    const objItem = data.findIndex((obj) => obj.id === id);
+    data.splice(objItem, 1);
+    sessionStorage.setItem("cart", JSON.stringify(data));
+    addAmount();
+    getSubTotal();
+    
     // window.location.href = '/public/checkout.html';
-    console.log(ref.current.id);
-  }
+  };
   return (
     <div className="container__checkout">
       <div className="checkout__avocados">
         {data.map((avo) => {
           return (
-            <div className="checkout__avo"  onClick={onHandleDelete} ref={ref} id={avo.id}>
+            <div key={avo.id} ref={ref} className="checkout__avo">
               <img src={`https://platzi-avo.vercel.app/${avo.image}`} alt="" />
               <h3>{avo.name}</h3>
               <p>${avo.price}</p>
               <p>X {avo.quantity}</p>
               <p>${avo.price}</p>
-              <TiDelete  className="checkout__trash" />
+              <TiDelete
+                id={avo.id}
+                onClick={onHandleDelete}
+                className="checkout__trash"
+              />
             </div>
           );
         })}
