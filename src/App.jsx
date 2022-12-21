@@ -42,15 +42,19 @@ function App() {
   const notify = () => toast("Avocado Added !");
 
   const getSubTotal = () => {
-
-    
-    let total = JSON.parse(sessionStorage.getItem("cart"));
-    setSubtotal(
-      total
-        .map((value) => value.price * value.quantity)
-        .reduce((cont, val) => cont + val)
-    );
-    console.log(subtotal);
+    if (
+      sessionStorage.getItem("cart") === null ||
+      JSON.parse(sessionStorage.getItem("cart")).length === 0
+    ) {
+      setSubtotal(0);
+    } else {
+      let total = JSON.parse(sessionStorage.getItem("cart"));
+      setSubtotal(
+        total
+          .map((value) => value.price * value.quantity)
+          .reduce((cont, val) => cont + val)
+      );
+    }
   };
   const addAmount = () => {
     if (
