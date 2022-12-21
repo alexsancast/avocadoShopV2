@@ -115,7 +115,7 @@ export default function Navbar({
                 <h3>{avo.name}</h3>
 
                 <div className="preview__quantity">
-                  <label>x{avo.quantity}</label>
+                  <label>X{avo.quantity}</label>
                 </div>
 
                 <div className="preview__price">
