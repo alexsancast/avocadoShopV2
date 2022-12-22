@@ -4,7 +4,8 @@ import Avocado from "./Avocado";
 import "../assets/sass/home.scss";
 // import ClipLoader from "react-spinners/ClipLoader";
 // import * as ReactBootStrap from "react-bootstrap";
-import Spinn from "./Spinn";
+
+import { ThreeDots  } from "react-loader-spinner";
 
 export default function Home({
   avocados,
@@ -48,7 +49,16 @@ export default function Home({
       {value ? (
         <>
           {isLoading ? (
-            <Spinn/>
+            <ThreeDots
+              height="80"
+              width="80"
+              radius="9"
+              color="#4fa94d"
+              ariaLabel="three-dots-loading"
+              wrapperStyle={{}}
+              wrapperClassName=""
+              visible={true}
+            />
           ) : (
             <>
               {avocados.map((avocado) => {
