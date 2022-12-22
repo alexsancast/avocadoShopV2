@@ -33,7 +33,11 @@ function App() {
       const data = await getApi.json();
       setAvocados(data.data);
       setresults(data.data);
-      setisLoading(false);
+
+      setTimeout(() => {
+        setisLoading(false);
+      }, 2000);
+      
     }
 
     getData();
@@ -64,7 +68,7 @@ function App() {
       JSON.parse(sessionStorage.getItem("cart")).length === 0
     ) {
       setAmount(0);
-      setPreview([])
+      setPreview([]);
     } else {
       let value = JSON.parse(sessionStorage.getItem("cart"));
       setPreview(value);
@@ -148,6 +152,7 @@ function App() {
         pauseOnHover
         theme="light"
       />
+
       <Backdrop />
       <Routes>
         <Route
@@ -218,9 +223,7 @@ function App() {
           }
         ></Route>
 
-        <Route path="/thanks" element ={<Thanks/>} >
-        
-        </Route>
+        <Route path="/thanks" element={<Thanks />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

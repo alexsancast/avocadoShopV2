@@ -2,13 +2,25 @@ import React from "react";
 import { useEffect } from "react";
 import Avocado from "./Avocado";
 import "../assets/sass/home.scss";
+import ClipLoader from "react-spinners/ClipLoader";
+import * as ReactBootStrap from "react-bootstrap";
+import { Spinn } from "./Spinn";
 
-export default function Home({ avocados, value, isLoading , addAmount , getSubTotal , notify , slidePreview , slideBasket }) {
-  useEffect(()=>{
-    slideBasket ? slidePreview() : slideBasket = false; 
-  }, [])
+export default function Home({
+  avocados,
+  value,
+  isLoading,
+  addAmount,
+  getSubTotal,
+  notify,
+  slidePreview,
+  slideBasket,
+}) {
+  useEffect(() => {
+    slideBasket ? slidePreview() : (slideBasket = false);
+  }, []);
 
-  const addToCart = (id)=>{
+  const addToCart = (id) => {
     const avocado = avocados.find((avo) => avo.id == id);
     let avo = [];
     if (sessionStorage.getItem("cart") == null) {
@@ -22,7 +34,7 @@ export default function Home({ avocados, value, isLoading , addAmount , getSubTo
         console.log(datavo);
         sessionStorage.setItem("cart", JSON.stringify(datavo));
       } else {
-        datavo.push({ ...avocado, quantity: + 1 });
+        datavo.push({ ...avocado, quantity: +1 });
         sessionStorage.setItem("cart", JSON.stringify(datavo));
       }
     }
@@ -30,22 +42,21 @@ export default function Home({ avocados, value, isLoading , addAmount , getSubTo
     addAmount();
     getSubTotal();
     notify();
-
   };
   return (
     <div className="container__avocados">
       {value ? (
         <>
           {isLoading ? (
-            <div>Loading...</div>
+            <Spinn />
           ) : (
             <>
               {avocados.map((avocado) => {
+                <Spinn />
                 return (
-                    <div key={avocado.id} className="card__avocado" >
-                      <Avocado avocado={avocado} addToCart = {addToCart}   />
-                    </div>
-                  
+                  <div key={avocado.id} className="card__avocado">
+                    <Avocado avocado={avocado} addToCart={addToCart} />
+                  </div>
                 );
               })}
             </>
