@@ -2,9 +2,9 @@ import React from "react";
 import { useEffect } from "react";
 import Avocado from "./Avocado";
 import "../assets/sass/home.scss";
-import ClipLoader from "react-spinners/ClipLoader";
-import * as ReactBootStrap from "react-bootstrap";
-import { Spinn } from "./Spinn";
+// import ClipLoader from "react-spinners/ClipLoader";
+// import * as ReactBootStrap from "react-bootstrap";
+import Spinn from "./Spinn";
 
 export default function Home({
   avocados,
@@ -48,11 +48,10 @@ export default function Home({
       {value ? (
         <>
           {isLoading ? (
-            <Spinn />
+            <Spinn/>
           ) : (
             <>
               {avocados.map((avocado) => {
-                <Spinn />
                 return (
                   <div key={avocado.id} className="card__avocado">
                     <Avocado avocado={avocado} addToCart={addToCart} />
