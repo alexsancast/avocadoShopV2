@@ -10,6 +10,7 @@ import Contactus from "./components/Contactus";
 import Slidebar from "./components/Slidebar";
 import Backdrop from "./components/Backdrop";
 import Checkout from "./components/Checkout";
+import Thanks from "./components/Thanks";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -37,6 +38,7 @@ function App() {
 
     getData();
     addAmount();
+    getSubTotal();
   }, []);
 
   const notify = () => toast("Avocado Added !");
@@ -62,6 +64,7 @@ function App() {
       JSON.parse(sessionStorage.getItem("cart")).length === 0
     ) {
       setAmount(0);
+      setPreview([])
     } else {
       let value = JSON.parse(sessionStorage.getItem("cart"));
       setPreview(value);
@@ -214,6 +217,10 @@ function App() {
             />
           }
         ></Route>
+
+        <Route path="/thanks" element ={<Thanks/>} >
+        
+        </Route>
       </Routes>
       <Footer />
     </BrowserRouter>

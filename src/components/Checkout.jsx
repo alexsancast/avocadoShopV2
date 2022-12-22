@@ -4,6 +4,8 @@ import React from "react";
 import { TiDelete } from "react-icons/ti";
 import { useRef } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 function Checkout({
   subtotal,
@@ -16,6 +18,7 @@ function Checkout({
   const [checkout, setCheckout] = useState([]);
   const [value, setValue] = useState();
   const data = JSON.parse(sessionStorage.getItem("cart"));
+  const navegate = useNavigate();
 
   useEffect(() => {
     slideBasket ? slidePreview() : (slideBasket = false);
@@ -26,10 +29,18 @@ function Checkout({
   }, []);
 
   const testValue = () => {
-    if (checkout === null || checkout.length === 0) {
+    if (data === null || data.length <= 0) {
       setValue(false);
     } else setValue(true);
   };
+
+  const onNavegateBtn = ()=>{
+    navegate("/thanks");
+    sessionStorage.removeItem('cart');
+    addAmount();
+    getSubTotal();
+    
+  }
 
   const onHandleDelete = (event) => {
     const id = event.currentTarget.id;
@@ -40,6 +51,7 @@ function Checkout({
     getSubTotal();
     setCheckout(data);
     testValue();
+    
 
     // window.location.href = '/public/checkout.html';
   };
@@ -79,11 +91,11 @@ function Checkout({
               <textarea cols="25" rows="8"></textarea>
             </div>
 
-            <button>Checkout</button>
+            <button onClick={onNavegateBtn}>Checkout</button>
           </div>
         </>
       ) : (
-        <div>No hay aguacates en la canasta </div>
+        <div>No avocados in the basket </div>
       )}
     </div>
   );
