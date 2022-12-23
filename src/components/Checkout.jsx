@@ -65,9 +65,9 @@ function Checkout({
                     alt=""
                   />
                   <h3>{avo.name}</h3>
-                  <p>${avo.price}</p>
-                  <p>X {avo.quantity}</p>
-                  <p>$ {avo.price * avo.quantity}</p>
+                  <p className="avocados_p1">${avo.price}</p>
+                  <p className="avocados_p2">X {avo.quantity}</p>
+                  <p className="avocados_p3">$ {(avo.price * avo.quantity).toFixed(2)}</p>
                   <TiDelete
                     id={avo.id}
                     onClick={onHandleDelete}

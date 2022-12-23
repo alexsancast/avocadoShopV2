@@ -3,6 +3,7 @@
   width: 60%;
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin: auto;
   gap: 3em;
 
@@ -17,7 +18,7 @@
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
       height: 5em;
-      width: 24em;
+      width: 26em;
       justify-content: space-around;
       position: relative;
       gap: 1em;
@@ -25,20 +26,42 @@
       img {
         width: 3.6em;
         height: 3.6em;
+        position: absolute;
+        left: 0.4em;
       }
 
       h3 {
         font-size: 0.8em;
         font-family: variable.$title-font;
+        position: absolute;
+        left: 5em;
       }
 
-      p {
+      .avocados_p1 {
         font-size: 0.8em;
         font-family: variable.$title-font;
+        position: absolute;
+        left: 18em;
+      }
+
+      .avocados_p2 {
+        font-size: 0.8em;
+        font-family: variable.$title-font;
+        position: absolute;
+        left: 22em;
+        
+      }
+      .avocados_p3 {
+        font-size: 0.8em;
+        font-family: variable.$title-font;
+        position: absolute;
+        left: 26em;
       }
 
       .checkout__trash {
         background-color: green($color: #000000);
+        position: absolute;
+        right: 1em;
         &:hover {
           cursor: pointer;
         }
@@ -136,9 +159,6 @@
   }
 }
 
-
-
-
 @media screen and (max-width: 1090px) {
   .container__checkout {
     .checkout__subtotal {
@@ -164,5 +184,3 @@
     }
   }
 }
-
-
