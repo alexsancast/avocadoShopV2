@@ -5,6 +5,7 @@ import "../assets/sass/home.scss";
 // import ClipLoader from "react-spinners/ClipLoader";
 // import * as ReactBootStrap from "react-bootstrap";
 import { ThreeDots } from "react-loader-spinner";
+import avo from "../../public/sadAvo.jpg";
 
 export default function Home({
   avocados,
@@ -73,7 +74,10 @@ export default function Home({
           )}{" "}
         </>
       ) : (
-        <div>There is not results</div>
+        <div className="container__fail">
+          <img src={avo} alt="" />
+          <h1>There is not results</h1>
+          </div>
       )}
     </div>
   );

@@ -1,6 +1,19 @@
+
+@use "barchart/variable";
+
 .container__thanks {
   display: flex;
   justify-content: center;
   min-height: calc(100vh - 200px);
   align-items: center;
+
+  img {
+    width: 20em;
+    height: 20em;
+  }
+
+  h1 {
+    font-size: 2em;
+    font-family: variable.$title-font;
+  }
 }

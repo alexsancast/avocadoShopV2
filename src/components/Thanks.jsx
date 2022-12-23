@@ -3,6 +3,8 @@ import "../assets/sass/thanks.scss";
 import { ThreeDots } from "react-loader-spinner";
 import { useState } from "react";
 import { useEffect } from "react";
+import avoHappy from "../../public/avoFunny.jpg";
+
 
 function Thanks() {
   const [state, setState] = useState(true);
@@ -26,7 +28,11 @@ function Thanks() {
           visible={true}
         />
       ) : (
-        <h1>Thanks for the purchase </h1>
+        <div>
+          <img src={avoHappy} alt="" />
+          {" "}
+          <h1>Thanks for the purchase </h1>{" "}
+        </div>
       )}
     </div>
   );

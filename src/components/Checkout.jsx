@@ -5,6 +5,7 @@ import { TiDelete } from "react-icons/ti";
 import { useRef } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import avoEmpty from "../../public/avoEmpty.jpg";
 
 function Checkout({
   subtotal,
@@ -67,7 +68,9 @@ function Checkout({
                   <h3>{avo.name}</h3>
                   <p className="avocados_p1">${avo.price}</p>
                   <p className="avocados_p2">X {avo.quantity}</p>
-                  <p className="avocados_p3">$ {(avo.price * avo.quantity).toFixed(2)}</p>
+                  <p className="avocados_p3">
+                    $ {(avo.price * avo.quantity).toFixed(2)}
+                  </p>
                   <TiDelete
                     id={avo.id}
                     onClick={onHandleDelete}
@@ -92,7 +95,10 @@ function Checkout({
           </div>
         </>
       ) : (
-        <div>No avocados in the basket </div>
+        <div className="container__basket">
+          <img src={avoEmpty} alt="" />
+          <h1> No avocados in the basket</h1>{" "}
+        </div>
       )}
     </div>
   );

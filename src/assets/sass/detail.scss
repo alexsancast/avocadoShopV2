@@ -6,6 +6,7 @@
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   margin: auto;
   justify-content: center;
+  min-height: calc(100vh - 200px);
 
   .container_details__avocado {
     display: flex;

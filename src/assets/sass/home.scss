@@ -73,12 +73,28 @@
   }
 }
 
-.container__loader{
+.container__loader {
   display: flex;
   justify-content: center;
   min-height: calc(100vh - 200px);
   align-items: center;
-  
+}
+
+.container__fail {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 200px);
+  align-items: center;
+
+  h1 {
+    font-size: 2em;
+    font-family: variable.$title-font;
+  }
+
+  img {
+    width: 10em;
+    height: 10em;
+  }
 }
 
 //Medias
