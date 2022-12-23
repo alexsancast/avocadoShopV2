@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../assets/sass/detail.scss";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { ThreeDots } from "react-loader-spinner";
 
 function Details({ addTocart, slidePreview, slideBasket }) {
   const [avocado, setAvocado] = useState([]);
@@ -37,7 +38,19 @@ function Details({ addTocart, slidePreview, slideBasket }) {
   return (
     <div className="container_details">
       {isLoading ? (
-        <div>Loading...</div>
+        <div className="container__loader">
+          {" "}
+          <ThreeDots
+            height="80"
+            width="80"
+            radius="9"
+            color="#4fa94d"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClassName=""
+            visible={true}
+          />
+        </div>
       ) : (
         <div className="container_details__avocado">
           <div className="container_details__img">

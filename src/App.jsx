@@ -36,8 +36,7 @@ function App() {
 
       setTimeout(() => {
         setisLoading(false);
-      }, 2000);
-      
+      }, 1000);
     }
 
     getData();
