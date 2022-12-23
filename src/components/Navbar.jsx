@@ -127,7 +127,7 @@ export default function Navbar({
         })}
 
         <div className="preview__review-cart">
-          <label htmlFor=""> Subtotal: ${Math.round(subtotal)}</label>
+          <label htmlFor=""> Subtotal: $ {subtotal.toFixed(2)}</label>
 
           <button onClick={onHanbleBtn}>Review Cart</button>
         </div>

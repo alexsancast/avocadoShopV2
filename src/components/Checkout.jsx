@@ -6,7 +6,6 @@ import { useRef } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 function Checkout({
   subtotal,
   slidePreview,
@@ -34,13 +33,12 @@ function Checkout({
     } else setValue(true);
   };
 
-  const onNavegateBtn = ()=>{
+  const onNavegateBtn = () => {
     navegate("/thanks");
-    sessionStorage.removeItem('cart');
+    sessionStorage.removeItem("cart");
     addAmount();
     getSubTotal();
-    
-  }
+  };
 
   const onHandleDelete = (event) => {
     const id = event.currentTarget.id;
@@ -51,7 +49,6 @@ function Checkout({
     getSubTotal();
     setCheckout(data);
     testValue();
-    
 
     // window.location.href = '/public/checkout.html';
   };
@@ -70,7 +67,7 @@ function Checkout({
                   <h3>{avo.name}</h3>
                   <p>${avo.price}</p>
                   <p>X {avo.quantity}</p>
-                  <p>${avo.price}</p>
+                  <p>$ {avo.price * avo.quantity}</p>
                   <TiDelete
                     id={avo.id}
                     onClick={onHandleDelete}
@@ -83,7 +80,7 @@ function Checkout({
           <div className="checkout__subtotal">
             <div className="checkout__label">
               <h1>SUBTOTAL :</h1>
-              <p>${subtotal}</p>
+              <p>${subtotal.toFixed(2)}</p>
             </div>
 
             <div className="checkout__seller">
