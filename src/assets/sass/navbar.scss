@@ -48,6 +48,10 @@
         position: absolute;
         top: 7px;
         left: 10px;
+
+        &:hover{
+          cursor: pointer;
+        }
       }
       .header__search_input {
         width: 250px;
@@ -241,6 +245,11 @@
 
 .backdrop-open {
   display: block;
+}
+
+.search-open{
+  display: block;
+
 }
 
 //*Styles for NavLinks*//

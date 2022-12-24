@@ -16,6 +16,7 @@ export default function Navbar({
   subtotal,
   slideBasket,
   slidePreview,
+  slideIconSearch,
 }) {
   const navegate = useNavigate();
   const onHanbleBtn = () => {
@@ -67,8 +68,8 @@ export default function Navbar({
           </ul>
         </nav>
 
-        <div className="header__search">
-          <FaSearch className="search_icon" />
+        <div className="header__search search-open">
+          <FaSearch onClick={slideIconSearch} className="search_icon" />
 
           <input
             onChange={handleInput}
@@ -106,8 +107,8 @@ export default function Navbar({
       >
         {preview.map((avo) => {
           return (
-            <div className="preview__conatiner" key={avo.id} >
-              <div className="preview__avo" >
+            <div className="preview__conatiner" key={avo.id}>
+              <div className="preview__avo">
                 <img
                   src={`https://platzi-avo.vercel.app/${avo.image}`}
                   alt=""

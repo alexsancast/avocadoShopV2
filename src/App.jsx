@@ -11,8 +11,10 @@ import Slidebar from "./components/Slidebar";
 import Backdrop from "./components/Backdrop";
 import Checkout from "./components/Checkout";
 import Thanks from "./components/Thanks";
+import Searchicon from "./components/Searchicon";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { GiConsoleController } from "react-icons/gi";
 
 function App() {
   const [avocados, setAvocados] = useState([]);
@@ -25,6 +27,7 @@ function App() {
   const [preview, setPreview] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
   const [slideBasket, setSlideBasket] = useState(false);
+  const [slideSearch, setSlideSearch] = useState(false);
 
   useEffect(() => {
     async function getData() {
@@ -104,9 +107,18 @@ function App() {
 
   const toggleSidebar = () => {
     setSlidebar((prevent) => !prevent);
+    if (slideBasket === slidebar) {
+      setSlideBasket(false);
+    }
   };
   const slidePreview = () => {
     setSlideBasket((prevent) => !prevent);
+    if (slidebar === slideBasket) {
+      setSlidebar(false);
+    }
+  };
+  const slideIconSearch = () => {
+    setSlideSearch((prevent) => !prevent);
   };
 
   const toggleCart = () => {
@@ -128,6 +140,7 @@ function App() {
     <BrowserRouter>
       <Navbar
         toggleSidebar={toggleSidebar}
+        slidebar={slidebar}
         amount={amount}
         findAvocado={findAvocado}
         toggleCart={toggleCart}
@@ -136,9 +149,10 @@ function App() {
         subtotal={subtotal}
         slidePreview={slidePreview}
         slideBasket={slideBasket}
+        slideIconSearch={slideIconSearch}
       />
       <Slidebar slidebar={slidebar} />
-      <Backdrop slidebar={slidebar} />
+      <Backdrop slidebar={slidebar} toggleSidebar={toggleSidebar} />
       <ToastContainer
         position="bottom-left"
         autoClose={2000}
@@ -153,6 +167,7 @@ function App() {
       />
 
       <Backdrop />
+      <Searchicon slideSearch={slideSearch} findAvocado ={findAvocado} />
       <Routes>
         <Route
           path="/aboutme"

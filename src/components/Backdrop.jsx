@@ -1,9 +1,12 @@
 import React from "react";
 import "../assets/sass/navbar.scss";
 
-function Backdrop({slidebar}) {
+function Backdrop({ slidebar, toggleSidebar }) {
   return (
-    <div className={slidebar ? "backdrop backdrop-open" : "backdrop"}></div>
+    <div
+      onClick={toggleSidebar}
+      className={slidebar ? "backdrop backdrop-open" : "backdrop"}
+    ></div>
   );
 }
 
