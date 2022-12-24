@@ -28,6 +28,7 @@ function App() {
   const [subtotal, setSubtotal] = useState(0);
   const [slideBasket, setSlideBasket] = useState(false);
   const [slideSearch, setSlideSearch] = useState(false);
+  const [disableSearch , setDisableSearch] = useState (false);
 
   useEffect(() => {
     async function getData() {
@@ -104,6 +105,10 @@ function App() {
     getSubTotal();
     notify();
   };
+
+  const diableIcon = ()=> {
+    setSlidebar((prevent) => !prevent);
+  }
 
   const toggleSidebar = () => {
     setSlidebar((prevent) => !prevent);
