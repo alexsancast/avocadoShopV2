@@ -17,3 +17,20 @@
     font-family: variable.$title-font;
   }
 }
+
+@media screen and (max-width: 940px) {
+  .container__thanks {
+    
+    img {
+      width: 17em;
+      height: 17em;
+    }
+  
+    h1 {
+      font-size: 1.5em;
+      font-family: variable.$title-font;
+    }
+  }
+  
+ 
+}

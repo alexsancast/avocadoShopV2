@@ -200,15 +200,6 @@ function App() {
             />
           }
         ></Route>
-        <Route
-          path="*"
-          element={
-            <div>
-              {" "}
-              <h1>Page not found</h1>
-            </div>
-          }
-        ></Route>
 
         <Route
           path="/details/:id"

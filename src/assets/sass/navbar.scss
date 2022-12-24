@@ -239,10 +239,9 @@
   display: none;
 }
 
-.backdrop-open{
-  display: block ;
+.backdrop-open {
+  display: block;
 }
-
 
 //*Styles for NavLinks*//
 
@@ -269,6 +268,10 @@
   .header {
     padding: 0 2em;
     .header__container {
+      .header__amount {
+        right: 75px;
+      }
+
       img {
         width: 180px;
         height: 40px;
@@ -307,6 +310,9 @@
   .header {
     padding: 0 1em;
     .header__container {
+      .header__amount {
+        right: 62px;
+      }
       img {
         width: 160px;
         height: 40px;
