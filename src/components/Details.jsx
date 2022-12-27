@@ -5,7 +5,7 @@ import "../assets/sass/detail.scss";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { ThreeDots } from "react-loader-spinner";
 
-function Details({ addTocart, slidePreview, slideBasket ,setSlideSearch }) {
+function Details({ addTocart, slidePreview, slideBasket ,setSlideSearch , setDisableSearch}) {
   const [avocado, setAvocado] = useState([]);
   const [isLoading, setisLoading] = useState(true);
   const [input, setInput] = useState();
@@ -20,6 +20,7 @@ function Details({ addTocart, slidePreview, slideBasket ,setSlideSearch }) {
       const data = await getApi.json();
       setAvocado(data);
       setisLoading(false);
+      setDisableSearch(false);
 
       slideBasket ? slidePreview() : (slideBasket = false);
       setSlideSearch(false)

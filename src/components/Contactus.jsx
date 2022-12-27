@@ -4,11 +4,12 @@ import "../assets/sass/contactus.scss";
 //imagenes
 import submit from "../../public/submit3.jpg";
 
-function Contactus({ setSlidebar, setSlideSearch, slidePreview, slideBasket }) {
+function Contactus({ setSlidebar, setSlideSearch, slidePreview, slideBasket ,setDisableSearch }) {
   useEffect(() => {
     slideBasket ? slidePreview() : (slideBasket = false);
     setSlideSearch(false);
     setSlidebar(false);
+    setDisableSearch(false);
   }, []);
   return (
     <div className="container__contactus">

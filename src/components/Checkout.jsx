@@ -13,7 +13,8 @@ function Checkout({
   slideBasket,
   addAmount,
   getSubTotal,
-  setSlideSearch
+  setSlideSearch , 
+  setDisableSearch 
 }) {
   const ref = useRef(null);
   const [checkout, setCheckout] = useState([]);
@@ -25,6 +26,7 @@ function Checkout({
     slideBasket ? slidePreview() : (slideBasket = false);
     setSlideSearch(false);
     setCheckout(data);
+    setDisableSearch (false);
     if (data === null || data.length <= 0) {
       setValue(false);
     } else setValue(true);

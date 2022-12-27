@@ -28,7 +28,8 @@ function App() {
   const [subtotal, setSubtotal] = useState(0);
   const [slideBasket, setSlideBasket] = useState(false);
   const [slideSearch, setSlideSearch] = useState(false);
-  const [disableSearch, setDisableSearch] = useState(false);
+  const [disableSearch, setDisableSearch] = useState(true);
+
 
   useEffect(() => {
     async function getData() {
@@ -42,7 +43,7 @@ function App() {
         setisLoading(false);
       }, 1000);
     }
-
+    setDisableSearch(true);
     getData();
     addAmount();
     getSubTotal();
@@ -155,6 +156,7 @@ function App() {
         slidePreview={slidePreview}
         slideBasket={slideBasket}
         slideIconSearch={slideIconSearch}
+        disableSearch = {disableSearch}
       />
       <Slidebar slidebar={slidebar} />
       <Backdrop slidebar={slidebar} toggleSidebar={toggleSidebar} />
@@ -182,6 +184,7 @@ function App() {
           path="/aboutme"
           element={
             <Aboutme
+              setDisableSearch = {setDisableSearch}
               setSlidebar={setSlidebar}
               setSlideSearch={setSlideSearch}
               slideBasket={slideBasket}
@@ -193,6 +196,7 @@ function App() {
           path="/location"
           element={
             <Location
+              setDisableSearch = {setDisableSearch}
               setSlidebar={setSlidebar}
               setSlideSearch={setSlideSearch}
               slideBasket={slideBasket}
@@ -204,6 +208,7 @@ function App() {
           path="/support"
           element={
             <Contactus
+              setDisableSearch ={setDisableSearch}
               setSlidebar={setSlidebar}
               setSlideSearch={setSlideSearch}
               slideBasket={slideBasket}
@@ -215,6 +220,7 @@ function App() {
           path="/checkout"
           element={
             <Checkout
+              setDisableSearch ={setDisableSearch}
               setSlideSearch={setSlideSearch}
               slideBasket={slideBasket}
               subtotal={subtotal}
@@ -228,6 +234,7 @@ function App() {
           path="/home"
           element={
             <Home
+              setDisableSearch = {setDisableSearch}
               addTocart={addTocart}
               avocados={avocados}
               value={value}
@@ -246,6 +253,7 @@ function App() {
           path="/details/:id"
           element={
             <Details
+              setDisableSearch ={setDisableSearch}
               setSlideSearch={setSlideSearch}
               addTocart={addTocart}
               slideBasket={slideBasket}

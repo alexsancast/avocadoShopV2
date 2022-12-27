@@ -17,6 +17,7 @@ export default function Navbar({
   slideBasket,
   slidePreview,
   slideIconSearch,
+  disableSearch
 }) {
   const navegate = useNavigate();
   const onHanbleBtn = () => {
@@ -68,7 +69,7 @@ export default function Navbar({
           </ul>
         </nav>
 
-        <div className="header__search search-open">
+        <div className= {disableSearch ? "header__search search-open" : "search-visibility" } >
           <FaSearch
             disabled={true}
             onClick={slideIconSearch}

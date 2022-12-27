@@ -49,6 +49,7 @@
         top: 7px;
         left: 10px;
        
+       
 
         &:hover{
           cursor: pointer;
@@ -251,6 +252,15 @@
 .search-open{
   display: block;
 
+}
+
+
+
+.search-visibility{
+  visibility:hidden;
+}
+.search-visibility-visible{
+  visibility:visible
 }
 
 //*Styles for NavLinks*//
