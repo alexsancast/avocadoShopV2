@@ -16,9 +16,11 @@ export default function Home({
   notify,
   slidePreview,
   slideBasket,
+  setSlidebar
 }) {
   useEffect(() => {
     slideBasket ? slidePreview() : (slideBasket = false);
+    setSlidebar(false);
   }, []);
 
   const addToCart = (id) => {

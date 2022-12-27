@@ -28,7 +28,7 @@ function App() {
   const [subtotal, setSubtotal] = useState(0);
   const [slideBasket, setSlideBasket] = useState(false);
   const [slideSearch, setSlideSearch] = useState(false);
-  const [disableSearch , setDisableSearch] = useState (false);
+  const [disableSearch, setDisableSearch] = useState(false);
 
   useEffect(() => {
     async function getData() {
@@ -106,21 +106,21 @@ function App() {
     notify();
   };
 
-  const diableIcon = ()=> {
+  const diableIcon = () => {
     setSlidebar((prevent) => !prevent);
-  }
+  };
 
   const toggleSidebar = () => {
-    setSlidebar((prevent) => !prevent);
-    if (slideBasket === slidebar) {
+    if (slideBasket !== slidebar) {
       setSlideBasket(false);
     }
+    setSlidebar((prevent) => !prevent);
   };
   const slidePreview = () => {
-    setSlideBasket((prevent) => !prevent);
-    if (slidebar === slideBasket) {
+    if (slidebar !== slideBasket) {
       setSlidebar(false);
     }
+    setSlideBasket((prevent) => !prevent);
   };
   const slideIconSearch = () => {
     setSlideSearch((prevent) => !prevent);
@@ -172,30 +172,50 @@ function App() {
       />
 
       <Backdrop />
-      <Searchicon slideSearch={slideSearch} findAvocado ={findAvocado} />
+      <Searchicon
+        slideIconSearch={slideIconSearch}
+        slideSearch={slideSearch}
+        findAvocado={findAvocado}
+      />
       <Routes>
         <Route
           path="/aboutme"
           element={
-            <Aboutme slideBasket={slideBasket} slidePreview={slidePreview} />
+            <Aboutme
+              setSlidebar={setSlidebar}
+              setSlideSearch={setSlideSearch}
+              slideBasket={slideBasket}
+              slidePreview={slidePreview}
+            />
           }
         ></Route>
         <Route
           path="/location"
           element={
-            <Location slideBasket={slideBasket} slidePreview={slidePreview} />
+            <Location
+              setSlidebar={setSlidebar}
+              setSlideSearch={setSlideSearch}
+              slideBasket={slideBasket}
+              slidePreview={slidePreview}
+            />
           }
         ></Route>
         <Route
           path="/support"
           element={
-            <Contactus slideBasket={slideBasket} slidePreview={slidePreview} />
+            <Contactus
+              setSlidebar={setSlidebar}
+              setSlideSearch={setSlideSearch}
+              slideBasket={slideBasket}
+              slidePreview={slidePreview}
+            />
           }
         ></Route>
         <Route
           path="/checkout"
           element={
             <Checkout
+              setSlideSearch={setSlideSearch}
               slideBasket={slideBasket}
               subtotal={subtotal}
               slidePreview={slidePreview}
@@ -217,6 +237,7 @@ function App() {
               notify={notify}
               slideBasket={slideBasket}
               slidePreview={slidePreview}
+              setSlidebar={setSlidebar}
             />
           }
         ></Route>
@@ -225,6 +246,7 @@ function App() {
           path="/details/:id"
           element={
             <Details
+              setSlideSearch={setSlideSearch}
               addTocart={addTocart}
               slideBasket={slideBasket}
               slidePreview={slidePreview}

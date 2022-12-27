@@ -69,7 +69,11 @@ export default function Navbar({
         </nav>
 
         <div className="header__search search-open">
-          <FaSearch onClick={slideIconSearch} className="search_icon" />
+          <FaSearch
+            disabled={true}
+            onClick={slideIconSearch}
+            className="search_icon"
+          />
 
           <input
             onChange={handleInput}
