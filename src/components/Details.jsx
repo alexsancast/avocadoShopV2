@@ -69,7 +69,7 @@ function Details({ addTocart, slidePreview, slideBasket ,setSlideSearch , setDis
             </p>
             <p className="details_price">$ {avocado.price}</p>
             <div className="container__details__btn-input">
-              <input type="number" min={0} max={100} onChange={onInput} />
+              <input  type="number" min={2} max={100} onChange={onInput} />
               <button
                 ref={ref}
                 className="details_info__btn"

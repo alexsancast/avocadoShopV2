@@ -6,7 +6,6 @@
   grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
   gap: 4em;
   margin: auto;
-
   min-height: calc(100vh - 300px);
 
   .container__aboutme_info {
@@ -45,7 +44,7 @@
 @media screen and (max-width: 623px){
 
   .container__aboutme{
-    width: 60%;
+    width: 80%;
     
     .container__aboutme_info{
       justify-content: center;
