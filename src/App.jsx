@@ -30,6 +30,8 @@ function App() {
   const [slideSearch, setSlideSearch] = useState(false);
   const [disableSearch, setDisableSearch] = useState(true);
 
+  
+  
 
   useEffect(() => {
     async function getData() {
@@ -47,6 +49,10 @@ function App() {
     getData();
     addAmount();
     getSubTotal();
+    console.log(
+      process.env.REACT_APP_AUTH0_DOMAIN,
+      process.env.REACT_APP_AUTH0_DOMAIN
+    )
   }, []);
 
   const notify = () => toast("Avocado Added !");
@@ -158,6 +164,7 @@ function App() {
         slideIconSearch={slideIconSearch}
         disableSearch = {disableSearch}
       />
+
       <Slidebar slidebar={slidebar} />
       <Backdrop slidebar={slidebar} toggleSidebar={toggleSidebar} />
       <ToastContainer

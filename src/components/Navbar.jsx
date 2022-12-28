@@ -5,6 +5,7 @@ import { GiBasket } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
 import "../assets/sass/navbar.scss";
 import { IoReorderThreeOutline } from "react-icons/io5";
+import { useAuth0 } from "@auth0/auth0-react";
 //Imagnes
 import logo from "../../public/logo.png";
 
@@ -19,6 +20,7 @@ export default function Navbar({
   slideIconSearch,
   disableSearch
 }) {
+  const {loginWithRedirect} = useAuth0();
   const navegate = useNavigate();
   const onHanbleBtn = () => {
     navegate("/checkout");
@@ -32,6 +34,7 @@ export default function Navbar({
       <div className="header__container">
         <NavLink to="/home">
           <img src={logo} alt="logoAvocado2" />
+          <button onClick={()=> loginWithRedirect()} >login</button>
         </NavLink>
 
         <nav className="nav">
