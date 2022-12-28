@@ -18,7 +18,7 @@
     height: 100%;
     align-items: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     z-index: 20;
 
@@ -48,10 +48,8 @@
         position: absolute;
         top: 7px;
         left: 10px;
-       
-       
 
-        &:hover{
+        &:hover {
           cursor: pointer;
         }
       }
@@ -105,7 +103,6 @@
     }
 
     .menu_ham {
-      margin: 0.7em;
       display: none;
 
       &:hover {
@@ -249,18 +246,15 @@
   display: block;
 }
 
-.search-open{
+.search-open {
   display: block;
-
 }
 
-
-
-.search-visibility{
-  visibility:hidden;
+.search-visibility {
+  visibility: hidden;
 }
-.search-visibility-visible{
-  visibility:visible
+.search-visibility-visible {
+  visibility: visible;
 }
 
 //*Styles for NavLinks*//
@@ -357,3 +351,4 @@
     }
   }
 }
+
