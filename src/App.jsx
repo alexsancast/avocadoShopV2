@@ -14,7 +14,6 @@ import Thanks from "./components/Thanks";
 import Searchicon from "./components/Searchicon";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { GiConsoleController } from "react-icons/gi";
 
 function App() {
   const [avocados, setAvocados] = useState([]);
@@ -29,9 +28,6 @@ function App() {
   const [slideBasket, setSlideBasket] = useState(false);
   const [slideSearch, setSlideSearch] = useState(false);
   const [disableSearch, setDisableSearch] = useState(true);
-
-  
-  
 
   useEffect(() => {
     async function getData() {
@@ -49,10 +45,6 @@ function App() {
     getData();
     addAmount();
     getSubTotal();
-    console.log(
-      process.env.REACT_APP_AUTH0_DOMAIN,
-      process.env.REACT_APP_AUTH0_DOMAIN
-    )
   }, []);
 
   const notify = () => toast("Avocado Added !");
@@ -162,7 +154,7 @@ function App() {
         slidePreview={slidePreview}
         slideBasket={slideBasket}
         slideIconSearch={slideIconSearch}
-        disableSearch = {disableSearch}
+        disableSearch={disableSearch}
       />
 
       <Slidebar slidebar={slidebar} />
@@ -191,7 +183,7 @@ function App() {
           path="/aboutme"
           element={
             <Aboutme
-              setDisableSearch = {setDisableSearch}
+              setDisableSearch={setDisableSearch}
               setSlidebar={setSlidebar}
               setSlideSearch={setSlideSearch}
               slideBasket={slideBasket}
@@ -203,7 +195,7 @@ function App() {
           path="/location"
           element={
             <Location
-              setDisableSearch = {setDisableSearch}
+              setDisableSearch={setDisableSearch}
               setSlidebar={setSlidebar}
               setSlideSearch={setSlideSearch}
               slideBasket={slideBasket}
@@ -215,7 +207,7 @@ function App() {
           path="/support"
           element={
             <Contactus
-              setDisableSearch ={setDisableSearch}
+              setDisableSearch={setDisableSearch}
               setSlidebar={setSlidebar}
               setSlideSearch={setSlideSearch}
               slideBasket={slideBasket}
@@ -227,7 +219,7 @@ function App() {
           path="/checkout"
           element={
             <Checkout
-              setDisableSearch ={setDisableSearch}
+              setDisableSearch={setDisableSearch}
               setSlideSearch={setSlideSearch}
               slideBasket={slideBasket}
               subtotal={subtotal}
@@ -241,7 +233,7 @@ function App() {
           path="/home"
           element={
             <Home
-              setDisableSearch = {setDisableSearch}
+              setDisableSearch={setDisableSearch}
               addTocart={addTocart}
               avocados={avocados}
               value={value}
@@ -260,7 +252,7 @@ function App() {
           path="/details/:id"
           element={
             <Details
-              setDisableSearch ={setDisableSearch}
+              setDisableSearch={setDisableSearch}
               setSlideSearch={setSlideSearch}
               addTocart={addTocart}
               slideBasket={slideBasket}
