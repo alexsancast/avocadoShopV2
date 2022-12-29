@@ -11,10 +11,12 @@ import Slidebar from "./components/Slidebar";
 import Backdrop from "./components/Backdrop";
 import Checkout from "./components/Checkout";
 import Boxprofile from "./components/Boxprofile";
+import Profile from "./components/Profile";
 import Thanks from "./components/Thanks";
 import Searchicon from "./components/Searchicon";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 
 function App() {
   const [avocados, setAvocados] = useState([]);
@@ -29,6 +31,7 @@ function App() {
   const [slideBasket, setSlideBasket] = useState(false);
   const [slideSearch, setSlideSearch] = useState(false);
   const [disableSearch, setDisableSearch] = useState(true);
+   
 
   useEffect(() => {
     async function getData() {
@@ -265,6 +268,7 @@ function App() {
         ></Route>
 
         <Route path="/thanks" element={<Thanks />}></Route>
+        <Route path="/profile" element={<Profile/>} >  </Route>
       </Routes>
       <Footer />
     </BrowserRouter>

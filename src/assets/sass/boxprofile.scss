@@ -8,8 +8,11 @@
     right: 8px;
     background-color: variable.$avocado-color;
     border-radius: 10%;
-    top: 75px;
+    top: 80px;
     z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container__boxprofile:before{
@@ -22,5 +25,6 @@
     position: absolute;
     top: -12px;
     left: 40px;
+    z-index: 99999;
 
 }
