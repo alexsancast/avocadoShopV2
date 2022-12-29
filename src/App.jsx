@@ -268,7 +268,7 @@ function App() {
         ></Route>
 
         <Route path="/thanks" element={<Thanks />}></Route>
-        <Route path="/profile" element={<Profile/>} >  </Route>
+        <Route path="/profile" element={<Profile/>} > </Route>
       </Routes>
       <Footer />
     </BrowserRouter>

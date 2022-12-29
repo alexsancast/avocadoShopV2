@@ -13,7 +13,7 @@ export default function Boxprofile() {
           <button onClick={logout}>Logout</button>
         </>
       ) : (
-        <>
+        <>  
           <button onClick={loginWithRedirect}>Sign in </button>
           <h1>New customer? </h1>
         </>
