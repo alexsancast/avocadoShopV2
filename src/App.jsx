@@ -10,6 +10,7 @@ import Contactus from "./components/Contactus";
 import Slidebar from "./components/Slidebar";
 import Backdrop from "./components/Backdrop";
 import Checkout from "./components/Checkout";
+import Boxprofile from "./components/Boxprofile";
 import Thanks from "./components/Thanks";
 import Searchicon from "./components/Searchicon";
 import { ToastContainer, toast } from "react-toastify";
@@ -173,6 +174,7 @@ function App() {
       />
 
       <Backdrop />
+      <Boxprofile/>
       <Searchicon
         slideIconSearch={slideIconSearch}
         slideSearch={slideSearch}
