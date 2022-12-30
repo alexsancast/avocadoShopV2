@@ -17,12 +17,14 @@ export default function Home({
   slidePreview,
   slideBasket,
   setSlidebar,
-  setDisableSearch
+  setDisableSearch,
+  setSlideProfile
 }) {
   useEffect(() => {
     slideBasket ? slidePreview() : (slideBasket = false);
     setSlidebar(false);
     setDisableSearch(true);
+    setSlideProfile(false);
   }, []);
 
   const addToCart = (id) => {

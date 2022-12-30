@@ -31,6 +31,7 @@ function App() {
   const [slideSearch, setSlideSearch] = useState(false);
   const [disableSearch, setDisableSearch] = useState(true);
   const [slideProfile, setSlideProfile] = useState(false);
+  
 
   useEffect(() => {
     async function getData() {
@@ -201,6 +202,8 @@ function App() {
               slideBasket={slideBasket}
               slidePreview={slidePreview}
               setSlideBasket={setSlideBasket}
+              setSlideProfile = {setSlideProfile}
+              
             />
           }
         ></Route>
@@ -212,6 +215,7 @@ function App() {
               setSlidebar={setSlidebar}
               setSlideSearch={setSlideSearch}
               setSlideBasket={setSlideBasket}
+              setSlideProfile = {setSlideProfile}
             />
           }
         ></Route>
@@ -224,6 +228,7 @@ function App() {
               setSlideSearch={setSlideSearch}
               slidePreview={slidePreview}
               setSlideBasket={setSlideBasket}
+              setSlideProfile= {setSlideProfile}
             />
           }
         ></Route>
@@ -239,6 +244,7 @@ function App() {
               slidePreview={slidePreview}
               addAmount={addAmount}
               getSubTotal={getSubTotal}
+              setSlideProfile={setSlideProfile}
             />
           }
         ></Route>
@@ -257,6 +263,7 @@ function App() {
               slideBasket={slideBasket}
               slidePreview={slidePreview}
               setSlidebar={setSlidebar}
+              setSlideProfile = {setSlideProfile}
             />
           }
         ></Route>
@@ -271,12 +278,14 @@ function App() {
               setSlideBasket={setSlideBasket}
               slidePreview={slidePreview}
               notify={notify}
+              setSlideProfile ={setSlideProfile}
             />
           }
         ></Route>
 
         <Route path="/thanks" element={<Thanks />}></Route>
-        <Route path="/profile" element={<Profile />}>
+        <Route path="/profile" element={<Profile setSlideProfile= {setSlideProfile} />}>
+          
           {" "}
         </Route>
       </Routes>

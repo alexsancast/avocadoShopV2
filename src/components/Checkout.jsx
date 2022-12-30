@@ -16,7 +16,8 @@ function Checkout({
   getSubTotal,
   setSlideSearch , 
   setDisableSearch ,
-  setSlideBasket
+  setSlideBasket ,
+  setSlideProfile
 }) {
   const ref = useRef(null);
   const [checkout, setCheckout] = useState([]);
@@ -30,6 +31,7 @@ function Checkout({
     setSlideSearch(false);
     setCheckout(data);
     setDisableSearch (false);
+    setSlideProfile(false);
     if (data === null || data.length <= 0) {
       setValue(false);
     } else setValue(true);

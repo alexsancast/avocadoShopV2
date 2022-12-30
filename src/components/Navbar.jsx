@@ -95,7 +95,7 @@ export default function Navbar({
           <div className="header__username_person">
             {" "}
             <BsFillPersonFill onClick={slideProfileIcon} className="header__username" size="1.3em" />
-            <h2>{isAuthenticated ? user.name : "Hi , sign up"}</h2>
+            <h2>{isAuthenticated ?  user.email: "Hi , sign up"}</h2>
           </div>
 
           <div>

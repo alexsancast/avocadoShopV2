@@ -6,12 +6,13 @@ import gif from "../../public/location2.gif";
 import location from "../../public/location.png";
 import avostore from "../../public/avostore.jpg";
 
-function Location({setSlidebar, setSlideSearch , setSlideBasket, setDisableSearch}) {
+function Location({setSlidebar, setSlideSearch  ,setSlideProfile , setSlideBasket, setDisableSearch}) {
   useEffect(() => {
     setSlideSearch(false);
     setSlidebar(false);
     setDisableSearch(false);
     setSlideBasket(false);
+    setSlideProfile(false);
   }, []);
   return (
     <div className="container__location ">
