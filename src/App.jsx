@@ -17,7 +17,6 @@ import Searchicon from "./components/Searchicon";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 function App() {
   const [avocados, setAvocados] = useState([]);
   const [results, setresults] = useState([]);
@@ -31,8 +30,7 @@ function App() {
   const [slideBasket, setSlideBasket] = useState(false);
   const [slideSearch, setSlideSearch] = useState(false);
   const [disableSearch, setDisableSearch] = useState(true);
-  const [slideProfile , setSlideProfile] = useState(false);
-   
+  const [slideProfile, setSlideProfile] = useState(false);
 
   useEffect(() => {
     async function getData() {
@@ -114,26 +112,28 @@ function App() {
     setSlidebar((prevent) => !prevent);
   };
 
+  //Menus desplegables
+
   const toggleSidebar = () => {
-    if (slideBasket !== slidebar) {
-      setSlideBasket(false);
-    }
     setSlidebar((prevent) => !prevent);
+    setSlideBasket(false);
+    setSlideProfile(false);
   };
   const slidePreview = () => {
-    if (slidebar !== slideBasket) {
-      setSlidebar(false);
-    }
     setSlideBasket((prevent) => !prevent);
+    setSlideProfile(false);
+    setSlidebar(false);
+  };
+  const slideProfileIcon = () => {
+    setSlideProfile((prevent) => !prevent);
+    setSlideBasket(false);
+    setSlidebar(false);
   };
   const slideIconSearch = () => {
     setSlideSearch((prevent) => !prevent);
   };
 
-  const slideProfileIcon = () => {
-    setSlideProfile((prevent) => !prevent);
-    console.log("Funciona!")
-  };
+
 
   const toggleCart = () => {
     setCart((prevent) => !prevent);
@@ -165,7 +165,7 @@ function App() {
         slideBasket={slideBasket}
         slideIconSearch={slideIconSearch}
         disableSearch={disableSearch}
-        slideProfileIcon = {slideProfileIcon}
+        slideProfileIcon={slideProfileIcon}
       />
 
       <Slidebar slidebar={slidebar} />
@@ -184,7 +184,7 @@ function App() {
       />
 
       <Backdrop />
-      <Boxprofile  slideProfile ={slideProfile}/>
+      <Boxprofile slideProfile={slideProfile} />
       <Searchicon
         slideIconSearch={slideIconSearch}
         slideSearch={slideSearch}
@@ -200,6 +200,7 @@ function App() {
               setSlideSearch={setSlideSearch}
               slideBasket={slideBasket}
               slidePreview={slidePreview}
+              setSlideBasket={setSlideBasket}
             />
           }
         ></Route>
@@ -210,8 +211,7 @@ function App() {
               setDisableSearch={setDisableSearch}
               setSlidebar={setSlidebar}
               setSlideSearch={setSlideSearch}
-              slideBasket={slideBasket}
-              slidePreview={slidePreview}
+              setSlideBasket={setSlideBasket}
             />
           }
         ></Route>
@@ -222,8 +222,8 @@ function App() {
               setDisableSearch={setDisableSearch}
               setSlidebar={setSlidebar}
               setSlideSearch={setSlideSearch}
-              slideBasket={slideBasket}
               slidePreview={slidePreview}
+              setSlideBasket={setSlideBasket}
             />
           }
         ></Route>
@@ -234,6 +234,7 @@ function App() {
               setDisableSearch={setDisableSearch}
               setSlideSearch={setSlideSearch}
               slideBasket={slideBasket}
+              setSlideBasket={setSlideBasket}
               subtotal={subtotal}
               slidePreview={slidePreview}
               addAmount={addAmount}
@@ -267,7 +268,7 @@ function App() {
               setDisableSearch={setDisableSearch}
               setSlideSearch={setSlideSearch}
               addTocart={addTocart}
-              slideBasket={slideBasket}
+              setSlideBasket={setSlideBasket}
               slidePreview={slidePreview}
               notify={notify}
             />
@@ -275,7 +276,9 @@ function App() {
         ></Route>
 
         <Route path="/thanks" element={<Thanks />}></Route>
-        <Route path="/profile" element={<Profile/>} > </Route>
+        <Route path="/profile" element={<Profile />}>
+          {" "}
+        </Route>
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -15,7 +15,8 @@ function Checkout({
   addAmount,
   getSubTotal,
   setSlideSearch , 
-  setDisableSearch 
+  setDisableSearch ,
+  setSlideBasket
 }) {
   const ref = useRef(null);
   const [checkout, setCheckout] = useState([]);
@@ -25,7 +26,7 @@ function Checkout({
   const { isAuthenticated , loginWithRedirect } = useAuth0();
 
   useEffect(() => {
-    slideBasket ? slidePreview() : (slideBasket = false);
+    setSlideBasket(false);
     setSlideSearch(false);
     setCheckout(data);
     setDisableSearch (false);

@@ -3,12 +3,12 @@ import { useEffect } from "react";
 import "../assets/sass/aboutme.scss";
 import alex from "../../public/cast.jpg";
 
-function Aboutme({ setSlidebar, setSlideSearch, slidePreview, slideBasket , setDisableSearch }) {
+function Aboutme({ setSlidebar, setSlideSearch, slidePreview, setSlideBasket , setDisableSearch }) {
   useEffect(() => {
-    slideBasket ? slidePreview() : (slideBasket = false);
     setSlideSearch(false);
     setSlidebar(false);
     setDisableSearch(false);
+    setSlideBasket(false);
   }, []);
   return (
     <div className="container__aboutme">
