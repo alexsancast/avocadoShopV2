@@ -31,6 +31,7 @@ function App() {
   const [slideBasket, setSlideBasket] = useState(false);
   const [slideSearch, setSlideSearch] = useState(false);
   const [disableSearch, setDisableSearch] = useState(true);
+  const [slideProfile , setSlideProfile] = useState(false);
    
 
   useEffect(() => {
@@ -129,6 +130,11 @@ function App() {
     setSlideSearch((prevent) => !prevent);
   };
 
+  const slideProfileIcon = () => {
+    setSlideProfile((prevent) => !prevent);
+    console.log("Funciona!")
+  };
+
   const toggleCart = () => {
     setCart((prevent) => !prevent);
   };
@@ -159,6 +165,7 @@ function App() {
         slideBasket={slideBasket}
         slideIconSearch={slideIconSearch}
         disableSearch={disableSearch}
+        slideProfileIcon = {slideProfileIcon}
       />
 
       <Slidebar slidebar={slidebar} />
@@ -177,7 +184,7 @@ function App() {
       />
 
       <Backdrop />
-      <Boxprofile/>
+      <Boxprofile  slideProfile ={slideProfile}/>
       <Searchicon
         slideIconSearch={slideIconSearch}
         slideSearch={slideSearch}

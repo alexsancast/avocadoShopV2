@@ -71,6 +71,22 @@
       flex-direction: row;
       align-items: center;
 
+      .header__username_person {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+
+
+        h2 {
+         
+          font-size: 0.7em;
+          font-family: variable.$title-font; 
+          position: absolute;
+          top: 60px;
+        }
+      }
+
       .header__username {
         margin: 0.7em;
         p {
@@ -297,6 +313,10 @@
         .header__basket {
           width: 17px;
           height: 17px;
+
+          &:hover{
+            cursor: pointer;
+          }
         }
       }
 
@@ -352,4 +372,3 @@
     }
   }
 }
-

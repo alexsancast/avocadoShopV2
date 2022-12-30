@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import avoEmpty from "../../public/avoEmpty.jpg";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Checkout({
   subtotal,
@@ -21,6 +22,7 @@ function Checkout({
   const [value, setValue] = useState();
   const data = JSON.parse(sessionStorage.getItem("cart"));
   const navegate = useNavigate();
+  const { isAuthenticated , loginWithRedirect } = useAuth0();
 
   useEffect(() => {
     slideBasket ? slidePreview() : (slideBasket = false);
@@ -39,10 +41,18 @@ function Checkout({
   };
 
   const onNavegateBtn = () => {
-    navegate("/thanks");
-    sessionStorage.removeItem("cart");
-    addAmount();
-    getSubTotal();
+
+    if (isAuthenticated) {
+      navegate("/thanks");
+      sessionStorage.removeItem("cart");
+      addAmount();
+      getSubTotal();
+
+    }else {
+      loginWithRedirect();
+
+    }
+
   };
 
   const onHandleDelete = (event) => {

@@ -5,6 +5,7 @@ import { GiBasket } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
 import "../assets/sass/navbar.scss";
 import { IoReorderThreeOutline } from "react-icons/io5";
+import { useAuth0 } from "@auth0/auth0-react";
 //Imagnes
 import logo from "../../public/logo.png";
 
@@ -17,10 +18,11 @@ export default function Navbar({
   slideBasket,
   slidePreview,
   slideIconSearch,
-  disableSearch
+  disableSearch,
+  slideProfileIcon
 }) {
-  
   const navegate = useNavigate();
+  const { isAuthenticated  , user} = useAuth0();
   const onHanbleBtn = () => {
     navegate("/checkout");
   };
@@ -70,7 +72,11 @@ export default function Navbar({
           </ul>
         </nav>
 
-        <div className= {disableSearch ? "header__search search-open" : "search-visibility" } >
+        <div
+          className={
+            disableSearch ? "header__search search-open" : "search-visibility"
+          }
+        >
           <FaSearch
             disabled={true}
             onClick={slideIconSearch}
@@ -86,7 +92,11 @@ export default function Navbar({
         </div>
 
         <div className="header__username-amount">
-          <BsFillPersonFill className="header__username" size="1.3em" />
+          <div className="header__username_person">
+            {" "}
+            <BsFillPersonFill onClick={slideProfileIcon} className="header__username" size="1.3em" />
+            <h2>{isAuthenticated ? user.name : "Hi , sign up"}</h2>
+          </div>
 
           <div>
             <div className="header__amount">{amount}</div>
