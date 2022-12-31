@@ -8,6 +8,7 @@
   align-items: center;
   flex-direction: column;
   gap: 2em;
+  min-height: calc(100vh - 300px);
 
   img {
     width: 8em;

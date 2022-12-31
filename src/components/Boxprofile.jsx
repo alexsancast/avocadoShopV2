@@ -9,7 +9,11 @@ export default function Boxprofile({slideProfile}) {
     <div className={slideProfile? "container__boxprofile box__profile-open" : "container__boxprofile"  } >
       {isAuthenticated ? (
         <>
-           <img src={user.picture} alt="" />
+          <NavLink to= "/profile">
+          <img src={user.picture} alt="" />
+            
+          </NavLink>
+           
           <NavLink className="box_navbar" to="/profile">
             {" "}
             Profile
