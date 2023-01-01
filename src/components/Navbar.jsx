@@ -33,7 +33,7 @@ export default function Navbar({
   return (
     <header className="header">
       <div className="header__container">
-        <NavLink to="/home">
+        <NavLink to="/">
           <img src={logo} alt="logoAvocado2" />
         </NavLink>
 
